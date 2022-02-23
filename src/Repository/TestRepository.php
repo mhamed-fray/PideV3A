@@ -47,4 +47,12 @@ class TestRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function Sujetall()
+    {
+        $entityManager=$this->getEntityManager();
+        $query=$entityManager
+            ->createQuery('SELECT t , s FROM APP\Entity\Test t
+            JOIN t.Sujet s ');
+        return $query->getResult();
+    }
 }

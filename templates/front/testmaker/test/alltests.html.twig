@@ -1,0 +1,121 @@
+{% extends 'frontindex/index.html.twig' %}
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block body %}
+
+    <button>
+        <a href="{{ path('add_test') }}" class="btn btn-primary py-2">creer un nouveau test</a>
+    </button>
+
+    {% for test in alltests %}
+        <div class="col-lg-9 pr-lg-4">
+            <div class="row">
+                <div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:10000px">
+                    <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                        <div class="one-third mb-4 mb-md-0">
+                            <div class="job-post-item-header align-items-center">
+                                <span class="subadge">{{  test.id}}</span>
+
+                                <h2 class="mr-3 text-black"><a href="#">Titre: {{test.titre }}</a></h2>
+                                <h2 class="mr-3 text-black"><a href="#">Sujet: {{test.sujet.sujet }}</a></h2>
+                            </div>
+                            <div class="job-post-item-body d-block d-md-flex">
+                                <div class="mr-3"><span class="icon-layers"></span> <a href="#">Date de debut : {{test.datedebut|date('d/m/Y')}}</a></div>
+                                <div class="mr-3"><span class="icon-layers"></span>date fin : {{test.datefin|date('d/m/Y')}}</span></div>
+                            </div>
+                        </div>
+
+                        <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                        <span>
+                            <a href="{{ path('delete_test',{'id':test.id}) }}" class="btn btn-primary py-2">supprimer</a>
+                        </span>
+                            <span style="padding-left: 10px">
+                             <a href="{{ path('edit_test',{'id':test.id}) }}" class="btn btn-primary py-2">editer</a>
+                        </span>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="block-27">
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+   {#  <table class="table table-striped   ">
+        <tbody>
+
+        <tr>
+            <th>id</th>
+            <th>titre</th>
+            <th>datedebut</th>
+            <th>datefin</th>
+
+
+
+        </tr>
+        {% for test in alltests %}
+            <tr>
+                <td>{{test.id}}</td>
+                <td>{{test.titre }}</td>
+                <td>{{test.datedebut|date('d/m/Y')}}</td>
+                <td>{{test.datefin|date('d/m/Y')}}</td>
+
+
+
+
+
+
+
+
+            </tr>
+        {% endfor %}#}
+        </tbody>
+        <tr>
+            <th>
+
+            </th>
+        </tr>
+
+
+    </table>
+{% endblock %}
