@@ -17,13 +17,19 @@ class CandidatureController extends AbstractController
             'controller_name' => 'CandidatureController',
         ]);
     }
+
     /**
-     * @Route("/allcandidatures", name="all_candidatures")
+     * @Route("/table", name="all_candidatures")
      */
     public function all(): Response
     {
-        return $this->render('back/candidatures.html.twig', [
+        return $this->render('back/tables-editable.html.twig', [
             'controller_name' => 'CandidatureController',
         ]);
     }
+    
+
+   
+
+    
 }

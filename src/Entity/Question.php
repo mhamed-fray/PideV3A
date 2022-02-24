@@ -3,7 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\QuestionRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+
 
 /**
  * @ORM\Entity(repositoryClass=QuestionRepository::class)
@@ -19,23 +25,32 @@ class Question
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $contenu;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $numero;
+   
+
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Bibliotheque::class, inversedBy="questions")
      */
-    private $type_question;
+    private $bibliotheque;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity=Choix::class, mappedBy="question")
      */
-    private $grade;
+    private $choix;
+
+    public function __construct()
+    {
+        $this->choix = new ArrayCollection();
+    }
+
+
+
+
+
 
     public function getId(): ?int
     {
@@ -54,38 +69,45 @@ class Question
         return $this;
     }
 
-    public function getNumero(): ?string
+
+    public function getBibliotheque(): ?Bibliotheque
     {
-        return $this->numero;
+        return $this->bibliotheque;
     }
 
-    public function setNumero(string $numero): self
+    public function setBibliotheque(?Bibliotheque $bibliotheque): self
     {
-        $this->numero = $numero;
+        $this->bibliotheque = $bibliotheque;
 
         return $this;
     }
 
-    public function getTypeQuestion(): ?string
+    /**
+     * @return Collection|Choix[]
+     */
+    public function getChoix(): Collection
     {
-        return $this->type_question;
+        return $this->choix;
     }
 
-    public function setTypeQuestion(string $type_question): self
+    public function addChoix(Choix $choix): self
     {
-        $this->type_question = $type_question;
+        if (!$this->choix->contains($choix)) {
+            $this->choix[] = $choix;
+            $choix->setQuestion($this);
+        }
 
         return $this;
     }
 
-    public function getGrade(): ?string
+    public function removeChoix(Choix $choix): self
     {
-        return $this->grade;
-    }
-
-    public function setGrade(string $grade): self
-    {
-        $this->grade = $grade;
+        if ($this->choix->removeElement($choix)) {
+            // set the owning side to null (unless already changed)
+            if ($choix->getQuestion() === $this) {
+                $choix->setQuestion(null);
+            }
+        }
 
         return $this;
     }

@@ -146,9 +146,15 @@
                     </a>
                 </li>
                 <li class="--set-active-tables-html">
-                    <a  href="{{ path('all_questions')}}">
+                    <a  href="{{ path('back_all_questions')}}">
                         <span class="icon"><i class="mdi mdi-table"></i></span>
                         <span class="menu-item-label">Questions</span>
+                    </a>
+                </li>
+                <li class="--set-active-tables-html">
+                    <a  href="{{ path('back_all_choix')}}">
+                        <span class="icon"><i class="mdi mdi-table"></i></span>
+                        <span class="menu-item-label">Choix</span>
                     </a>
                 </li>
                 <p class="menu-label">Profil</p>
@@ -169,20 +175,22 @@
 
         </div>
     </aside>
-    {% endblock %}
-    {% block body %}
+    
+    
+    
         <section class="is-title-bar">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                 <ul>
                     <li>Admin</li>
-                    <li>Dashboard</li>
+                    <li>{% block pagetitle %}Dashboard{% endblock %}</li>
                 </ul>
                 </a>
             </div>
         </section>
+        
+    {% endblock %}
 
-
-
+    {% block body %}
         <section class="section main-section">
             <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
                 <div class="card">

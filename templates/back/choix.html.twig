@@ -1,8 +1,28 @@
 {% extends 'backindex/index.html.twig' %}
 
 {% block pagetitle %}
-    Questions
+    Choix
 {% endblock %}
+
+
+<div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
 
 
 {%  block body %}
@@ -19,27 +39,31 @@
             <table>
                 <thead>
                 <tr>
+                    
                     <th>Id</th>
                     <th>Contenu</th>
+                    <th>Etatchoix</th>
                     
                     
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for question in allquestions %}
+                {% for choix in allchoix %}
                 <tr>
-                    <td data-label="Id">{{question.id }}</td>
-                    <td data-label="Contenu">{{question.contenu }}</td>
+                    
+                    <td data-label="Id">{{choix.id }}</td>
+                    <td data-label="Contenu">{{choix.contenu }}</td>
+                    <td data-label="Etatchoix">{{choix.etatchoix }}</td>
                     
                     
                     <td class="actions-cell">
                         <div class="buttons right nowrap">
                             <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                <span class="icon"><a href="{{ path('back_edit_question',{'id':question.id}) }}"><i class="mdi mdi-plus-box"></i></a></span>
+                                <span class="icon"><a href="{{ path('back_edit_choix',{'id':choix.id}) }}"><i class="mdi mdi-plus-box"></i></a></span>
                             </button>
                             <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                <span class="icon"><a href="{{ path('back_delete_question',{'id':question.id}) }}"><i class="mdi mdi-trash-can"></i></a></span>
+                                <span class="icon"><a href="{{ path('back_delete_choix',{'id':choix.id}) }}"><i class="mdi mdi-trash-can"></i></a></span>
                             </button>
                         </div>
                     </td>

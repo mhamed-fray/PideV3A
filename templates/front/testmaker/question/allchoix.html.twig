@@ -1,0 +1,419 @@
+{% extends 'frontindex/index.html.twig' %}
+
+
+{% block cssquestion %}
+
+{% endblock %}
+
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block body %}
+<button>
+    <a href="{{ path('add_question') }}" class="btn btn-primary py-2">ajouter</a>
+</button>
+<section class="ftco-section bg-light">
+
+	<div class="container">
+    
+
+    
+		<div class="row" style="display:block">
+			<div class="col-lg-9 pr-lg-4" style="max-width:100%">
+				<div class="row">
+                    
+						<div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:10000px">
+                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center" >
+                                <div class="one-third mb-4 mb-md-0">
+                                    <div class="job-post-item-header align-items-center">
+                                        <span class="subadge">Partime</span>
+                                        <h2 class="mr-3 text-black"><a href="#">{{test_replacement[0].contenu}}</a></h2>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                        <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+                                    </div>
+                                </div>
+                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                                    
+                                    </div>
+                            </div>
+							
+                            <div class="questions" >
+							    <div class="in-question-container">
+                                   {{ form_start(form_question) }}
+                                    <div style="padding: 40px">
+                                    
+							            
+                                        <div>
+                                            {{ form_label(form_question.contenu, 'Le question ?', {
+                                            'label_attr' : {'class': 'form-style-label'},
+                                            }) }}
+                                        </div>
+                                        {{ form_widget(form_question.contenu , {'attr' : {'placeholder': "Poser votre question ici"}}) }}
+                                        {{ form_help(form_question.contenu) }}
+                                        
+
+                                        
+                                            
+                                        
+                                        
+							        </div>
+
+                                    <div style="padding: 40px">
+									    <div class="choice-container">
+
+                                    
+                                                {# <table>
+                                                <div>
+                                                <td>
+                                                    <div>
+                                                        {{ form_start(form_choix_1) }}
+                                                        <tr>
+                                                            <div>
+                                                                <div>{{ form_label(form_choix_1.contenu, '1er choix',
+                                                                { 'label_attr' : {'class': 'form-style-label'}}
+                                                                ) 
+                                                                }}
+                                                                </div>
+                                                                {{ form_errors(form_choix_1.contenu) }}
+                                                                {{ form_widget(form_choix_1.contenu) }}
+                                                                {{ form_help(form_choix_1.contenu) }}
+                                                            </diV>
+                                                        </tr>
+                                                        <tr>
+                                                            <div>
+                                                                {{ form_label(form_choix_1.etatchoix) }}
+                                                                {{ form_errors(form_choix_1.etatchoix) }}
+                                                                <span>{{ form_widget(form_choix_1.etatchoix) }}</span>
+                                                                {{ form_help(form_choix_1.etatchoix) }}
+                                                            </div>
+                                                        </tr>
+
+                                                        {{ form_end(form_choix_1) }}
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div>
+                                                        {{ form_start(form_choix_2) }}
+                                                        <tr>
+                                                            <div>
+                                                                <div>{{ form_label(form_choix_2.contenu, '1er choix',
+                                                                { 'label_attr' : {'class': 'form-style-label'}}
+                                                                ) 
+                                                                }}
+                                                                </div>
+                                                                {{ form_errors(form_choix_2.contenu) }}
+                                                                {{ form_widget(form_choix_2.contenu) }}
+                                                                {{ form_help(form_choix_2.contenu) }}
+                                                            </diV>
+                                                        </tr>
+                                                        <tr>
+                                                            <div>
+                                                                {{ form_label(form_choix_2.etatchoix) }}
+                                                                {{ form_errors(form_choix_2.etatchoix) }}
+                                                                <span>{{ form_widget(form_choix_2.etatchoix) }}</span>
+                                                                {{ form_help(form_choix_2.etatchoix) }}
+                                                            </div>
+                                                        </tr>
+
+                                                        {{ form_end(form_choix_2) }}
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div>
+                                                        {{ form_start(form_choix_3) }}
+                                                        <tr>
+                                                            <div>
+                                                                <div>{{ form_label(form_choix_3.contenu, '1er choix',
+                                                                { 'label_attr' : {'class': 'form-style-label'}}
+                                                                ) 
+                                                                }}
+                                                                </div>
+                                                                {{ form_errors(form_choix_3.contenu) }}
+                                                                {{ form_widget(form_choix_3.contenu) }}
+                                                                {{ form_help(form_choix_3.contenu) }}
+                                                            </diV>
+                                                        </tr>
+                                                        <tr>
+                                                            <div>
+                                                                {{ form_label(form_choix_3.etatchoix) }}
+                                                                {{ form_errors(form_choix_3.etatchoix) }}
+                                                                <span>{{ form_widget(form_choix_3.etatchoix) }}</span>
+                                                                {{ form_help(form_choix_3.etatchoix) }}
+                                                            </div>
+                                                        </tr>
+
+                                                        {{ form_end(form_choix_3) }}
+                                                    </div>
+                                                </td>
+
+                                                </div>
+                                                </table> #}
+
+                                            <table>
+                                                <tr>
+                                                    
+                                                    
+                                                    <td>
+                                                        <ul style="list-style-type: none">
+
+                                                            {{ form_start(form_choix_1) }}
+                                                            
+                                                                {{ form_label(form_choix_1.contenu, '1er choix',
+                                                                    { 'label_attr' : {'class': 'form-style-label'}}
+                                                                ) 
+                                                                }}
+                                                            
+                                                            
+                                                                {{ form_errors(form_choix_1.contenu) }}
+                                                                {{ form_widget(form_choix_1.contenu) }}
+                                                                {{ form_help(form_choix_1.contenu) }}
+                                                            
+                                                            
+                                                                {{ form_label(form_choix_1.etatchoix, "correct") }}
+                                                                {{ form_errors(form_choix_1.etatchoix) }}
+                                                                {{ form_widget(form_choix_1.etatchoix) }}
+                                                                {{ form_help(form_choix_1.etatchoix) }}
+                                                            
+                                                            
+                                                            
+                                                            {{ form_end(form_choix_1) }}
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                                {#
+                                                <td>
+                                                    <ul style="list-style-type: none">
+                                                        
+                                                        {{ form_start(form_choix_2) }}
+                                                        
+                                                            {{ form_label(form_choix_2.contenu, '1er choix',
+                                                                { 'label_attr' : {'class': 'form-style-label'}}
+                                                            ) 
+                                                            }}
+                                                        
+                                                        
+                                                            {{ form_errors(form_choix_2.contenu) }}
+                                                            {{ form_widget(form_choix_2.contenu) }}
+                                                            {{ form_help(form_choix_2.contenu) }}
+                                                        
+                                                        
+                                                            {{ form_label(form_choix_2.etatchoix, "correct2") }}
+                                                            {{ form_errors(form_choix_2.etatchoix) }}
+                                                            {{ form_widget(form_choix_2.etatchoix) }}
+                                                            {{ form_help(form_choix_2.etatchoix) }}
+                                                            
+                                                        
+                                                        
+                                                        {{ form_end(form_choix_2) }}
+
+                                                    </ul>
+                                                </td>
+
+                                                <td>
+                                                
+                                                    <ul style="list-style-type: none">
+                                                        
+                                                        {{ form_start(form_choix_3) }}
+                                                            {{ form_label(form_choix_3.contenu, '1er choix',
+                                                                { 'label_attr' : {'class': 'form-style-label'}}
+                                                            ) 
+                                                            }}
+                                                        
+                                                        
+                                                            {{ form_errors(form_choix_3.contenu) }}
+                                                            {{ form_widget(form_choix_3.contenu) }}
+                                                            {{ form_help(form_choix_3.contenu) }}
+                                                        
+                                                        
+                                                            {{ form_label(form_choix_3.etatchoix, "correct3") }}
+                                                            {{ form_errors(form_choix_3.etatchoix) }}
+                                                            {{ form_widget(form_choix_3.etatchoix) }}
+                                                            {{ form_help(form_choix_3.etatchoix) }}
+                                                            {{ form_end(form_choix_3) }}
+                                                        
+                                                        
+                                                        
+                                                        
+                                                    </ul>
+                                                    
+                                                </td>
+                                                
+                                            </tr>
+                                            </table>#}
+                                            
+
+
+                                            {#<table>
+                                            {{ form_start(form_choix_1) }}
+                                            {{ form_start(form_choix_2) }}
+                                            {{ form_start(form_choix_3) }}
+                                            <tr>
+                                                <td>{{ form_label(form_choix_1.contenu, '1er choix',
+                                                        { 'label_attr' : {'class': 'form-style-label'}}
+                                                        ) 
+                                                        }}
+                                                </td>
+                                                <td>
+                                                        <div></div>
+                                                    </td>
+                                                <td>
+                                                    {{ form_label(form_choix_2.contenu, '2eme choix',
+                                                            { 'label_attr' : {'class': 'form-style-label'}}
+                                                            ) 
+                                                            }}
+                                                    
+                                                </td>
+                                                <td>
+                                                        <div></div>
+                                                    </td>
+                                                <td>
+                                                    {{ form_label(form_choix_3.contenu, '3eme choix',
+                                                            { 'label_attr' : {'class': 'form-style-label'}}
+                                                            ) 
+                                                            }}
+                                                   
+                                                </td>
+                                            </tr>
+                                                <tr>
+                                                    <td>
+                                                        {{ form_errors(form_choix_1.contenu) }}
+                                                        {{ form_widget(form_choix_1.contenu) }}
+                                                        {{ form_help(form_choix_1.contenu) }}
+                                                    </td>
+                                                    <td>
+                                                        <div style="margin: 0px  15px 0 0"></div>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_errors(form_choix_2.contenu) }}
+                                                        {{ form_widget(form_choix_2.contenu) }}
+                                                        {{ form_help(form_choix_2.contenu) }}
+                                                    </td>
+                                                    <td>
+                                                        <div style="margin: 0px  15px 0 0"></div>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_errors(form_choix_3.contenu) }}
+                                                        {{ form_widget(form_choix_3.contenu) }}
+                                                        {{ form_help(form_choix_3.contenu) }}
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        {{ form_label(form_choix_1.etatchoix, "correct") }}
+                                                    {{ form_errors(form_choix_1.etatchoix) }}
+                                                    {{ form_widget(form_choix_1.etatchoix, { 'multiple':false, 'expanded':true }) }}
+                                                    {{ form_help(form_choix_1.etatchoix) }}
+                                                    {{ form_end(form_choix_1) }}
+                                                    </td>
+                                                    <td>
+                                                        <div></div>
+                                                    </td>
+                                                    <td>
+                                                    {{ form_label(form_choix_2.etatchoix, "correct") }}
+                                                    {{ form_errors(form_choix_2.etatchoix) }}
+                                                    {{ form_widget(form_choix_2.etatchoix) }}
+                                                    {{ form_help(form_choix_2.etatchoix) }}
+                                                    {{ form_end(form_choix_2) }}
+
+                                                    </td>
+                                                    <td>
+                                                        <div></div>
+                                                    </td>
+                                                    <td>
+                                                    {{ form_label(form_choix_3.etatchoix, "correct") }}
+                                                    {{ form_errors(form_choix_3.etatchoix) }}
+                                                    {{ form_widget(form_choix_3.etatchoix) }}
+                                                    {{ form_help(form_choix_3.etatchoix) }}
+                                                    {{ form_end(form_choix_3) }}
+                                                    </td>
+                                                </tr>
+                                                
+                                            
+                                            <tr>
+                                            <td>
+                                            
+                                            </td>
+                                            </tr>
+                                            
+                                        
+                                            
+                                            </table>
+                                            #}
+
+
+                                            <button type="submit" class="btn btn-info" style="margin-top : 20px"> Modifier question </button>
+									    </div>
+                                    </div>
+                                    
+                                    {{ form_end(form_question) }}
+                                </div>
+
+
+                        </div>
+                        
+                    
+                </div>    
+                <div class="row mt-5">
+		          	<div class="col text-center">
+		            	<div class="block-27">
+		            		<ul>
+		        				<li><a href="#">&lt;</a></li>
+		            			<li class="active"><span>1</span></li>
+	                			<li><a href="#">2</a></li>
+	                			<li><a href="#">3</a></li>
+		        				<li><a href="#">4</a></li>
+		        				<li><a href="#">5</a></li>
+                				<li><a href="#">&gt;</a></li>
+             				</ul>
+            			</div>
+          			</div>
+        		</div>
+	   		</div>
+		</div>
+	</div>
+</section>
+        {% endblock %}
+
+
+
+
+
+
+
+
+
+
+

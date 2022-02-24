@@ -129,7 +129,7 @@
 <!-- END nav -->
 {% block r1 %}
 <div class="hero-wrap img" style="background-image:url('{{ asset('../templates/front/images/pg_1.jpg')}}')">
-    {% block r2 %}
+    
     <div class="overlay"></div>
         <div class="container">
             <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
@@ -182,13 +182,28 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="ftco-search my-md-5">
+							<div class="row">
+			                    <div class="col-md-12 nav-link-wrap" >
+				                    <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="margin-top:50px">
+				                        <a class="nav-link " id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1"  >Je suis une entreprise</a>
+
+				                         <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false" style="margin-left:70px">je suis un candidat</a>
+
+				                    </div>
+				                </div>
+				            </div>
+			            </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    {% endblock %}
+    
 </div>
 {% endblock %}
+
 
 {% block body %}
 
