@@ -1,81 +1,159 @@
+{% extends 'frontindex/index.html.twig' %}
+
+
+{% block cssquestion %}
+
+{% endblock %}
+
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
 
 {% block body %}
-<!DOCTYPE html>
+    {% set note = 1 %}
 
+    <section class="ftco-section bg-light">
 
-<html>
-<head>
-    <title>creer votre sujet</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <style>
-        html, body {
-            display: flex;
-            justify-content: center;
-            font-family: Roboto, Arial, sans-serif;
-            font-size: 15px;
-        }
-        form {
-            border: 5px solid #f1f1f1;
-        }
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 16px 8px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #8ebf42;
-            color: white;
-            padding: 14px 0;
-            margin: 10px 0;
-            border: none;
-            cursor: grabbing;
-            width: 100%;
-        }
-        h1 {
-            text-align:center;
-            fone-size:18;
-        }
-        button:hover {
-            opacity: 0.8;
-        }
-        .formcontainer {
-            text-align: left;
-            margin: 24px 50px 12px;
-        }
-        .container {
-            padding: 16px 0;
-            text-align:left;
-        }
-        span.psw {
-            float: right;
-            padding-top: 0;
-            padding-right: 15px;
-        }
-        /* Change styles for span on extra small screens */
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-    </style>
-</head>
-<body>
-<form action="/action_page.php">
-    <h1>Sujet</h1>
-    <div class="formcontainer">
-        <hr/>
         <div class="container">
-            <label for="uname"><strong>Sujet</strong></label>
-            <input type="text" placeholder="Enter votre sujet" name="uname" required>
 
-        </div>
-        <button type="submit">suivant</button>
 
-        
-</form>
-</body>
-</html>
+
+            <div class="row" style="display:block">
+                <div class="col-lg-9 pr-lg-4" style="max-width:100%">
+                    <div class="row">
+
+                        <div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:10000px">
+                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center" >
+                                <div class="one-third mb-4 mb-md-0">
+                                    <div class="job-post-item-header align-items-center">
+                                        <span class="subadge">Partime</span>
+                                        <h2 class="mr-3 text-black"><a href="#">{{allquestions[1].contenu }}</a></h2>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                        <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+                                    </div>
+                                </div>
+                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+
+                                </div>
+                            </div>
+
+                            <div class="questions" style="display: table" >
+                                <div class="in-question-container">
+
+                                    <div style="padding: 40px">
+
+                                        {% for question in allquestions %}
+                                            <div class="questions_questionnaire">
+                                                {{question.contenu}}
+                                            </div>
+
+                                            <div classe="choix_questionnaire">
+                                                {{question.choix[0].contenu}}
+
+                                                {% if question.choix[0].etatchoix %}
+                                                    <input type="checkbox" name="checkfield" id="g01-01"  {% if checked is defined %}{% set note = 1 %}{% endif %}/>
+                                                {% else %}
+                                                    <input type="checkbox" name="checkfield" id="g01-01" />
+                                                {% endif %}
+
+                                            </div>
+                                            <div classe="choix_questionnaire">
+                                                {{question.choix[1].contenu}}
+
+                                                {% if question.choix[1].etatchoix %}
+                                                    <input type="checkbox" name="checkfield" id="g01-01" {% if checked is defined %}{% set note = note + 1 %}{% endif %}>
+                                                {% else %}
+                                                    <input type="checkbox" name="checkfield" id="g01-01" />
+                                                {% endif %}
+                                            </div>
+                                            <div classe="choix_questionnaire">
+                                                {{question.choix[2].contenu}}
+                                                {% if question.choix[2].etatchoix %}
+                                                    <input type="checkbox" name="checkfield" id="g01-01"  {% if checked is defined %}{% set note = note + 1 %}{% endif %}/>
+                                                {% else %}
+                                                    <input type="checkbox" name="checkfield" id="g01-01" />
+                                                {% endif %}
+                                            </div>
+
+                                        {% endfor %}
+
+                                        <a href="{{ path('note',{'note':note})}}">click</a>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col text-center">
+                                <div class="block-27">
+                                    <ul>
+                                        <li><a href="#">&lt;</a></li>
+                                        <li class="active"><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">&gt;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    {#
+    <script>
+    var note = 0;
+    function doalert(checkboxElem) {
+        if (checkboxElem.checked) {
+             note = note + 1;
+            alert(note)
+        }
+    }
+    </script>
+    #}
+
+
 {% endblock %}
+
+
+
+
+
+

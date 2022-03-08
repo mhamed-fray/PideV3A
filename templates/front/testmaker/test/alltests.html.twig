@@ -1,6 +1,7 @@
 {% extends 'frontindex/index.html.twig' %}
 
 {% block r1 %}
+
     <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -27,6 +28,13 @@
     <button>
         <a href="{{ path('add_test') }}" class="btn btn-primary py-2">creer un nouveau test</a>
     </button>
+    {% for message in app.flashes('info') %}
+    <div class ="alert alert btn-warning">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+
 
     {% for test in alltests %}
         <div class="col-lg-9 pr-lg-4">
@@ -43,6 +51,7 @@
                             <div class="job-post-item-body d-block d-md-flex">
                                 <div class="mr-3"><span class="icon-layers"></span> <a href="#">Date de debut : {{test.datedebut|date('d/m/Y')}}</a></div>
                                 <div class="mr-3"><span class="icon-layers"></span>date fin : {{test.datefin|date('d/m/Y')}}</span></div>
+                                <div class="mr-3"><span class="icon-layers"></span>date fin : {{test.datefin|date('d/m/Y')}}</span></div>
                             </div>
                         </div>
 
@@ -55,27 +64,15 @@
                         </span>
 
 
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     {% endfor %}
-    <div class="row mt-5">
-        <div class="col text-center">
-            <div class="block-27">
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
     </div>
     </div>
 
@@ -109,6 +106,11 @@
 
             </tr>
         {% endfor %}#}
+    <div class="navigation">
+        {{ knp_pagination_render(alltests, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
+
+    </div>
+
         </tbody>
         <tr>
             <th>
@@ -118,4 +120,6 @@
 
 
     </table>
+
+
 {% endblock %}

@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=TestRepository::class)
  */
@@ -16,6 +17,7 @@ class Test
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("post:read")
      */
     private $id;
 
@@ -23,6 +25,7 @@ class Test
      * @ORM\Column(type="date")
      *  @Assert\NotBlank
      * @Assert\GreaterThan("today")
+     * @Groups("post:read")
      */
     private $datedebut;
 
@@ -31,6 +34,7 @@ class Test
      * @ORM\Column(type="date", nullable=true)
      * @Assert\NotBlank
      * * @Assert\GreaterThan(propertyPath="datedebut")
+     * @Groups("post:read")
 
      *
 
@@ -40,6 +44,7 @@ class Test
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("post:read")
      * * @Assert\Length(
      *      min = 4,
      *      max = 20,

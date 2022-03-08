@@ -1,0 +1,5 @@
+{% extends 'frontindex/index.html.twig' %}
+{% block body %}
+<h1>Liste des test json</h1>
+{{ data|json_encode() }}
+{% endblock %}

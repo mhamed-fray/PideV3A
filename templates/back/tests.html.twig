@@ -1,8 +1,30 @@
 {% extends 'backindex/index.html.twig' %}
 {%  block body %}
-     <table class="table table-striped   ">
+
+
         <tbody>
+
     <h1>TEST</h1>
+
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+
+            <form class="search-model-form" action="{{ path('serie-search') }}">
+                <input
+                        type="search"
+                        name="query"
+                        class="form-control"
+                        placeholder="Search..."
+                        aria-label="Search"
+                >
+
+            </form>
+        </div>
+    </div>
+
+
+
         <tr>
             <th>id</th>
             <th>titre</th>
@@ -30,6 +52,12 @@
 
             </tr>
         {% endfor %}
+
         </tbody>
+            <tbody id="search">
+            </tbody>
      </table>
+
+
+
 {% endblock %}
