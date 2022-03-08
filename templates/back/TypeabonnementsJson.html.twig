@@ -1,0 +1,5 @@
+{% extends 'backindex/index.html.twig' %}
+{%  block body %}
+    <h1>Liste des types d'abonnement JSON</h1>
+    {{ data|json_encode() }}
+{% endblock %}
