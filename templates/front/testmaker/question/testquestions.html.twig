@@ -1,0 +1,115 @@
+{% extends 'frontindex/index.html.twig' %}
+
+
+{% block cssquestion %}
+
+{% endblock %}
+
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block body %}
+
+<section class="ftco-section bg-light">
+
+	<div class="container">
+    
+    
+
+    
+		<div class="row" style="display:block">
+			<div class="col-lg-9 pr-lg-4" style="max-width:100%">
+				<div class="row">
+                    
+						<div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:10000px">
+                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center" >
+                                <div class="one-third mb-4 mb-md-0">
+                                    <div class="job-post-item-header align-items-center">
+                                       
+                                        <h2 class="mr-3 text-black"><a href="#">Titre: {{test_selected.titre }}</a></h2>
+                                <h2 class="mr-3 text-black"><a href="#">Sujet: {{test_selected.sujet.sujet }}</a></h2>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                       <div class="mr-3"><span class="icon-layers"></span> <a href="#">Date de debut : {{test_selected.datedebut|date('d/m/Y')}}</a></div>
+                                <div class="mr-3"><span class="icon-layers"></span>date fin : {{test_selected.datefin|date('d/m/Y')}}</span></div>
+                                    </div>
+                                </div>
+                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                                    
+                                    </div>
+                            </div>
+							
+                            <div class="questions" style="display: table" >
+							    
+                                <div class="in-library-container">
+                                    <div class="library">
+                                        <div class="titre_library" style="font-size:28px;color:#5599c2;">
+                                            <table>
+                                                <td>
+                                                    <tr>
+                                                        Les questions et ses choix :
+                                                    </tr>
+                                                </td>
+                                                <td>
+                                                    <tr>    
+                                                        <a href="{{ path('listpdf',{'id':test_selected.id}) }}"><button type="submit" class="btn btn-info" style="padding:5px;margin-right:67px;font-size:15px;float:right;font-family:serif"> Imprimer quiz </button></a>
+                                                    </tr>
+                                                </td>
+                                            </table>
+                                        </div>
+                                        <div class="library_contents" style="margin-left:40px;margin-right: 40px;">
+                                            
+                                            {% for questions in test_selected.questions %}
+                                            <div style="border: 1px solid cadetblue;margin-bottom: 10px;">
+                                                <div style="font-size: xx-large;color: black;border-bottom: 1px solid grey;margin: 10px 20px 0 20px;line-height: initial;text-align:center">{{ questions.contenu }}</div>
+                                                {% for choix in questions.choix %}
+                                                <div style="font-size: large;color: dimgrey;text-align:center"> {{choix.contenu}}</div>
+                                                {% endfor %}
+                                                <a href="{{ path('modifier_question',{'id':test_selected.id,'question_id':questions.id}) }}"><button type="submit" class="btn btn-info" style="margin-top : 20px;width:100%"> remplacer </button></a>
+                                            </div>            
+                                            {% endfor %}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                </div>    
+                
+	   		</div>
+		</div>
+	</div>
+</section>
+        {% endblock %}
+
+
+
