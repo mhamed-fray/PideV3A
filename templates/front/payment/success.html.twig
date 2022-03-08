@@ -1,0 +1,320 @@
+{% extends 'frontindex/index.html.twig' %}
+{% block title %}Test&Hire{% endblock %}
+   {% block r1 %}
+       <style>
+           body{
+
+               background: #207dff;
+               background: -moz-linear-gradient(left, #207dff 0%, #a16ae8 100%);
+               background: -webkit-gradient(left top, right top, color-stop(0%, #207dff), color-stop(100%, #a16ae8));
+               background: -webkit-linear-gradient(left, #207dff 0%, #a16ae8 100%);
+               background: -o-linear-gradient(left, #207dff 0%, #a16ae8 100%);
+               background: -ms-linear-gradient(left, #207dff 0%, #a16ae8 100%);
+               background: -webkit-gradient(linear, left top, right top, from(#207dff), to(#a16ae8));
+               background: linear-gradient(to right, #207dff 0%, #a16ae8 100%);
+               filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207dff', endColorstr='#a16ae8', GradientType=1 );
+               font-family: 'Raleway', sans-serif;
+           }
+
+           .best-plan{
+               margin: 0 auto 30px auto;
+               z-index: 99;
+               font-family: 'Raleway', sans-serif;
+               font-size: 15px;
+               line-height: 1.55;
+               color: rgba(51,51,51,1);
+               font-weight: 300;
+           }
+
+           .best-plan__head{
+               text-align: center;
+               margin-bottom: 45px;
+           }
+
+           .best-plan__title{
+               font-size: 36px;
+               margin-bottom: 15px;
+               margin-top:50px;
+               font-weight: 800;
+               color:#3c2f17;
+           }
+           .best-plan__title + p{
+               font-size: 18px;
+               font-weight: 300;
+           }
+
+           .b-price-plan{
+               border: 1px solid rgba(125,138,164,.25);
+               max-width: 450px;
+               margin: 0 auto 30px auto;
+               background: #fff;
+               -webkit-border-radius: 5px;
+               border-radius: 5px;
+               -webkit-transition: opacity .35s linear, -webkit-transform .35s linear, -webkit-box-shadow .3s linear;
+               transition: opacity .35s linear, -webkit-transform .35s linear, -webkit-box-shadow .3s linear;
+               -o-transition: transform .35s linear, opacity .35s linear, box-shadow .3s linear;
+               transition: transform .35s linear, opacity .35s linear, box-shadow .3s linear;
+               transition: transform .35s linear, opacity .35s linear, box-shadow .3s linear, -webkit-transform .35s linear, -webkit-box-shadow .3s linear;
+           }
+
+           .b-price-plan__item{
+               padding: 15px 30px;
+           }
+
+           .b-price-plan__head{
+               padding-top: 20px;
+               padding-bottom: 20px;
+               text-align: center;
+               overflow: hidden;
+               position: relative;
+           }
+
+           .b-price-plan__head > h3{
+               font-size: 18px;
+               text-align: center;
+               position: relative;
+               z-index: 1;
+               margin: 0;
+               letter-spacing: 1px;
+           }
+
+           .price_foot{
+               text-align: center;
+               position: relative;
+               overflow: hidden;
+           }
+           .price_foot:before{
+               content: '';
+               position: absolute; top: 100%; left: 0;
+               width: 100%;
+               height: 100%;
+               background: rgba(125,138,164,.1);
+               -webkit-transition: top .6s linear;
+               -o-transition: top .6s linear;
+               transition: top .6s linear;
+           }
+
+           .b-price-plan__cost{
+               font-size: 20px;
+               font-weight: 600;
+               position: relative;
+               z-index: 99;
+               text-align: center;
+               background: rgba(125,138,164,.1);
+           }
+           .cost-title{
+               font-size: 55px;
+               line-height: 1;
+               font-weight: 700;
+               color: rgba(125,138,164,1);
+           }
+           .cost-title:before{
+               content: '\f155';
+               font-family: 'FontAwesome';
+               display: inline-block;
+               margin-right: 5px;
+               font-size: 20px;
+               position: relative; top: -20px;
+           }
+           .cost-title > span{
+               position: relative; top: -25px; left: 5px;
+               font-size: 18px;
+           }
+           .cost-time{
+               font-size: 13px;
+               color: rgba(125,138,164,.75);
+           }
+
+
+           .price-plan_pro{
+               position: relative;
+               z-index: 99;
+               -webkit-box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+               box-shadow:0 0 0 6px rgba(255, 255, 255, 0.3);
+           }
+
+           .p_plan_list{
+               padding: 0;
+               margin: 0;
+           }
+           .p_plan_list > li{
+               position: relative;
+               padding: 15px 30px 15px 54px;
+               margin: 0;
+               list-style: none;
+               background-color: #fff;
+               border-top: 1px solid rgba(125,138,164,.1);
+               -webkit-transition: all .3s ease;
+               -o-transition: all .3s ease;
+               transition: all .3s ease;
+           }
+           .p_plan_list > li:hover{
+               border-color: rgba(125,138,164,.1);
+               -webkit-border-radius: 5px;
+               border-radius: 5px;
+               -webkit-box-shadow: 0 2px 4px rgba(125,138,164,.06);
+               box-shadow: 0 2px 4px rgba(125,138,164,.06);
+               position: relative;
+               -webkit-transform: scale(1.05);
+               -ms-transform: scale(1.05);
+               transform: scale(1.05);
+               z-index: 99;
+           }
+
+           .p_plan_list > li .fa{
+               color: rgba(125,138,164,1);
+               margin-right: 8px;
+               width: 16px;
+               height: 16px;
+               position: absolute; top: 50%; left: 30px;
+               margin-top: -8px;
+           }
+           .p_plan_list > li .fa.text-success{
+               color: rgba(160,206,78,1)!important;
+           }
+           .p_plan_list > li .fa.text-danger{
+               color: rgba(253,99,71,1)!important;
+           }
+           .p_plan_list > li:first-of-type{
+               border-top: none;
+           }
+
+           /* price_btn style */
+
+           .price_btn{
+               overflow: hidden;
+               position: relative;
+               z-index: 99;
+               margin: 15px auto;
+               font-size: 13px;
+               font-weight: 700;
+               letter-spacing: 2px;
+               color: rgba(125,138,164,1) ;
+               text-decoration: none;
+               text-transform: uppercase;
+               width: 70%;
+               border: 2px solid rgba(125,138,164,1) !important;
+               background: #fff !important;
+               padding: 15px 20px !important;
+               -webkit-border-radius: 5px;
+               border-radius: 5px;
+           }
+           .price_btn:before,
+           .price_btn:after{
+               content: '';
+               position: absolute; top: 0; left: 0;
+               width: 0;
+               height: 50%;
+               background: rgba(125,138,164,1) !important;
+               -webkit-transition: width .3s ease-in;
+               -o-transition: width .3s ease-in;
+               transition: width .3s ease-in;
+           }
+           .price_btn:after{
+               top: auto;
+               bottom: 0;
+               -webkit-transition: width .4s ease-in;
+               -o-transition: width .4s ease-in;
+               transition: width .4s ease-in;
+           }
+           .price_btn:hover:before,
+           .price_btn:hover:after{
+               width: 100%;
+           }
+
+           .price_btn > span{
+               position: relative;
+               z-index: 99;
+           }
+
+           .price_btn .fa{
+               font-size: 18px;
+               position: absolute; top: 50%; left: 100%;
+               z-index: 99;
+               width: 30px;
+               opacity: 0;
+               -webkit-transition: left .55s linear, opacity .55s linear;
+               -o-transition: left .55s linear, opacity .55s linear;
+               transition: left .55s linear, opacity .55s linear;
+               -webkit-transform: translateY(-50%);
+               -ms-transform: translateY(-50%);
+               transform: translateY(-50%);
+           }
+           .price_btn:hover .fa{
+               left: 80%;
+               opacity: 1;
+           }
+
+           .price_btn:hover{
+               overflow: visible;
+               background: #fff;
+               border-color: rgba(125,138,164,1) !important;
+
+           }
+           .price_btn:active,
+           .price_btn:focus{
+               background: rgba(125,138,164,1) !important;
+               border-color: rgba(125,138,164,1) !important;
+           }
+
+           .b-price-plan:hover{
+               -webkit-box-shadow: 0 10px 20px rgba(125,138,164,.25) !important;
+               box-shadow: 0 10px 20px rgba(125,138,164,.25) !important;
+           }
+           .b-price-plan:hover .price_foot:before{
+               top: 0;
+           }
+
+           .b_plan_body:hover .b-price-plan{
+               opacity: .25;
+               -webkit-transform: scale(.95);
+               -ms-transform: scale(.95);
+               transform: scale(.95);
+           }
+           .b_plan_body:hover .b-price-plan:hover{
+               opacity: 1;
+               -webkit-transform: scale(1);
+               -ms-transform: scale(1);
+               transform: scale(1);
+           }
+
+           .ftr{
+               text-align: center;
+           }
+
+       </style>
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <!------ Include the above in your HEAD tag ---------->
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+       <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
+
+
+
+       <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+           <div class="overlay"></div>
+           <div class="container">
+               <div class="row no-gutters slider-text align-items-end justify-content-start">
+                   <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                       <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Accueil <i class="ion-ios-arrow-forward"></i></a></span> <span>Consulter les abonnements</span></p>
+                       <h1 class="mb-3 bread">Consulter les abonnements</h1>
+                   </div>
+
+               </div>
+           </div>
+       </div>
+
+   {% endblock %}
+
+{% block body %}
+    <h1>Thanks for your order!</h1>
+    <p>
+        We appreciate your business!
+        If you have any questions, please email
+        <a href="mailto:orders@example.com">orders@example.com</a>.
+    </p>
+{% endblock %}

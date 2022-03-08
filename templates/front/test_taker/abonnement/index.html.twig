@@ -320,6 +320,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="best-plan__title">Nos Abonnements</h3>
+                        <input type="button" class="btn btn-default" data-dismiss="modal">
+                        <a href="{{ path('all_abonnementsASC') }}"class="btn btn-secondary">Moins cher </a>
+                        <input type="button" class="btn btn-default" data-dismiss="modal">
+                        <a href="{{ path('all_abonnementsDSC') }}"class="btn btn-secondary">Plus cher </a>
                     </div>
                 </div>
             </div>
@@ -338,11 +342,22 @@
                             <ul class="p_plan_list">
                                 <li><i class="fa fa-diamond" aria-hidden="true"></i> {{ abonnement.nom }}</li>
                                 <li><i class="fa fa-cogs" aria-hidden="true"></i> {{ abonnement.description }}</li>
+                                <li><i class="fa fa-cogs" aria-hidden="true"></i> {{ abonnement.likes }}</li>
                             </ul>
                             <div class="b-price-plan__item price_foot">
-                                <a href="http://www.csshint.com/" class="btn btn-warning price_btn">
+
+
+                                <a href="{{ path('AimerAbo',{ida:abonnement.id}) }}" class="btn btn-warning price_btn">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <span>Aimer</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                </a>
+
+
+
+                                <a href="{{ path('checkout',{id:abonnement.id}) }}" class="btn btn-warning price_btn">
                                     <span>Buy now</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
                                 </a>
+
                             </div>
                         </div>
                     </div>

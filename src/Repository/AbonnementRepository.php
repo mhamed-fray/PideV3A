@@ -47,4 +47,14 @@ class AbonnementRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function OrderByCout(){
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('select s FROM App\Entity\Abonnement s ORDER BY s.cout');
+        return $query->getResult();
+    }
+    public function OrderByCoutDSC(){
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('select s FROM App\Entity\Abonnement s ORDER BY s.cout DESC');
+        return $query->getResult();
+    }
 }
