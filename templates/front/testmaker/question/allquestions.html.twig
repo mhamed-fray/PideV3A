@@ -36,29 +36,37 @@
 
 
 {% block body %}
-<button>
-    <a href="{{ path('add_question') }}" class="btn btn-primary py-2">ajouter</a>
-</button>
+{% set favori_check = 1 %}
+{% set favori_uncheck = 0 %}
+
 <section class="ftco-section bg-light">
 
 	<div class="container">
+    
     
 
     
 		<div class="row" style="display:block">
 			<div class="col-lg-9 pr-lg-4" style="max-width:100%">
 				<div class="row">
+
+                {% for message in app.flashes('info') %}
+                <div class ="alert alert btn-warning">
+                    {{ message }}
+                </div>
+    {% endfor %}
                     
 						<div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:10000px">
                             <div class="job-post-item p-4 d-block d-lg-flex align-items-center" >
                                 <div class="one-third mb-4 mb-md-0">
                                     <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Partime</span>
-                                        <h2 class="mr-3 text-black"><a href="#">{{allquestions[1].contenu }}</a></h2>
+                                       
+                                        <h2 class="mr-3 text-black"><a href="#">Titre: {{test.titre }}</a></h2>
+                                <h2 class="mr-3 text-black"><a href="#">Sujet: {{test.sujet.sujet }}</a></h2>
                                     </div>
                                     <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+                                       <div class="mr-3"><span class="icon-layers"></span> <a href="#">Date de debut : {{test.datedebut|date('d/m/Y')}}</a></div>
+                                <div class="mr-3"><span class="icon-layers"></span>date fin : {{test.datefin|date('d/m/Y')}}</span></div>
                                     </div>
                                 </div>
                                 <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
@@ -70,7 +78,7 @@
 							    <div class="in-question-container">
                                 
                                     <div style="padding: 40px">
-							            {{ form_start(form) }}
+							            {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
 
 
                                         <div>
@@ -81,12 +89,17 @@
                                         
                                         {{ form_widget(form.contenu , {'attr' : {'placeholder': "Poser votre question ici"}}) }}
                                         {{ form_help(form.contenu) }}
+                                        {{ form_errors(form.contenu)}}
                                         
-                                        
+                                            
+                                            {{number}}
 
                                         
-
-                                            <button type = "submit">submit</button>
+                                            {% if number <= 4 %}
+                                            <button type="submit" class="btn btn-info"> Next    >> </button>
+                                            {% else %}
+                                            <button type="submit" class="btn btn-info" style="margin-top : 20px" disabled>Next    >> (you have reached 10 questions)</button>
+                                            {% endif %}
                                             {{ form_end(form) }}
                                 
 							        </div>
@@ -97,23 +110,55 @@
                                 <div class="in-library-container">
                                     <div class="library">
                                         <div class="titre_library">
-                                            Choisir une que question de la bibliotheque
+                                            <a href="{{ path('all_question',{'favoris':favori_uncheck,'id':test.id}) }}" style="color:#97AFBE;">Choisir une que question de la bibliotheque ({{ list.getTotalItemCount }})</a>
+                                            <a href="{{ path('all_question',{'favoris':favori_check,'id':test.id}) }}"><button type="submit" class="btn btn-info" style="padding:5px;margin-right: 13px;font-size:15px;float:right;font-family:serif"> Les questions en favoris <div class="icon-star" style="color:rgb(226, 230, 30);width: 10px;margin: 4px; float:right"></div>  </button></a>
                                         </div>
                                         <div class="library_contents">
                                             
-                                                
-                                                    {% for biblio in list %}
-                                                        <ul style="list-style-type: none">
-                                                        <li>
-
-                                                            <a href="{{ path('delete_biblio',{'id_bib_question':biblio.id}) }}" class="icon-trash delete_icon" style="color:#A13030"><a>
-                                                            <a style="text-decoration:none;color:black" href="{{ path('question_selected',{'id':biblio.id}) }}">{{biblio.contenu}}</a>
+                                                    {% if favoris == 1 %}
+                                                        {#{% for biblio_question in list if biblio_question.favori is true %}#}
+                                                        {% for biblio_question in list|filter(biblio_question => biblio_question.favori == true) %}
                                                             
-                                                        </li>
-                                                        </ul>
+                                                            <ul style="list-style-type: none">
+                                                            <li>
 
-                                                        
-                                                    {% endfor %}
+                                                                <a href="{{ path('delete_biblio',{'id_bib_delete_question':biblio_question.id,'test_id':test.id}) }}" class="icon-trash " style="color:#A13030"><a>
+                                                                {% if biblio_question.favori == 1 %}
+                                                                <a href="{{ path('unfavor',{'question_favor_id':biblio_question.id,'test_id':test.id}) }}" class="icon-star delete_icon" style="color:rgb(226, 230, 30)"><a>
+                                                                {% else %}
+                                                                <a href="{{ path('favor',{'question_favor_id':biblio_question.id,'test_id':test.id}) }}" class="icon-star-o delete_icon" style="color:rgb(226, 230, 30)"><a>
+                                                                {% endif %}
+                                                                <a style="text-decoration:none;color:black" href="{{ path('question_selected',{'selected_id':biblio_question.id,'id':test.id}) }}">{{biblio_question.contenu}}</a>
+                                                            
+                                                                
+                                                            </li>
+                                                            </ul>
+
+                                                            
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        {% for biblio_question in list %}
+                                                            <ul style="list-style-type: none">
+                                                            <li>
+
+                                                                <a href="{{ path('delete_biblio',{'id_bib_delete_question':biblio_question.id,'test_id':test.id}) }}" class="icon-trash " style="color:#A13030"><a>
+                                                                {% if biblio_question.favori == 1 %}
+                                                                <a href="{{ path('unfavor',{'question_favor_id':biblio_question.id,'test_id':test.id}) }}" class="icon-star delete_icon" style="color:rgb(226, 230, 30)"><a>
+                                                                {% else %}
+                                                                <a href="{{ path('favor',{'question_favor_id':biblio_question.id,'test_id':test.id}) }}" class="icon-star-o delete_icon" style="color:rgb(226, 230, 30)"><a>
+                                                                {% endif %}
+                                                                
+                                                                <a style="text-decoration:none;color:black" href="{{ path('question_selected',{'selected_id':biblio_question.id,'id':test.id}) }}">{{biblio_question.contenu}}</a>
+                                                                
+                                                                
+                                                            </li>
+                                                            </ul>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                    <div style="width:100px;margin:100px auto 20px auto;color:black">{{ knp_pagination_render(list, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+                                                
+                                                {% set note = 26598432 %}
+                                                {% set note = note + 1 %}
                                                 
                                             
                                         </div>
@@ -124,21 +169,7 @@
                         
                     
                 </div>    
-                <div class="row mt-5">
-		          	<div class="col text-center">
-		            	<div class="block-27">
-		            		<ul>
-		        				<li><a href="#">&lt;</a></li>
-		            			<li class="active"><span>1</span></li>
-	                			<li><a href="#">2</a></li>
-	                			<li><a href="#">3</a></li>
-		        				<li><a href="#">4</a></li>
-		        				<li><a href="#">5</a></li>
-                				<li><a href="#">&gt;</a></li>
-             				</ul>
-            			</div>
-          			</div>
-        		</div>
+                
 	   		</div>
 		</div>
 	</div>

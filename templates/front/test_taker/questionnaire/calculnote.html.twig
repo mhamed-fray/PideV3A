@@ -1,0 +1,21 @@
+
+
+
+
+
+
+{% for questions in test_questions %}
+    <div>question : {{questions.contenu}}</div>
+    {% for choix in questions.choix %}
+    <div>choix choisi : {{choix.contenu}}</div>
+    {% endfor %}
+    
+
+    
+
+    
+
+                                                        
+{% endfor %}
+
+{{note}}

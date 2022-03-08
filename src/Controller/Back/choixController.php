@@ -57,7 +57,7 @@ class choixController extends AbstractController
         $Choix = $this->getDoctrine()->getRepository(Choix::class)->find($id);
         $em->remove($Choix);
         $em->flush();
-        return $this->redirectToRoute("all_choix");
+        return $this->redirectToRoute("back_all_choix");
 
     }
 
@@ -77,7 +77,7 @@ class choixController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($Choix);
             $em->flush();
-            return $this->redirectToRoute('all_choix');
+            return $this->redirectToRoute('back_all_choix');
         }
         return $this->render('Back/choix/addchoix.html.twig', ['form_choix' => $form->createView()]);
 
@@ -98,7 +98,7 @@ class choixController extends AbstractController
         {
             $em=$this->getDoctrine()->getManager();
             $em->flush();
-            return $this->redirectToRoute('all_choix');
+            return $this->redirectToRoute('back_all_choix');
         }
         return $this->render('Back/choix/editchoix.html.twig',[
 

@@ -26,11 +26,12 @@ class Question
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     *  @Assert\Length(
+     *      min = 4,
+     *      minMessage = "Your question  must be at least {{ limit }} characters long",
+     * )
      */
     private $contenu;
-
-   
-
 
     /**
      * @ORM\ManyToOne(targetEntity=Bibliotheque::class, inversedBy="questions")
@@ -38,14 +39,36 @@ class Question
     private $bibliotheque;
 
     /**
-     * @ORM\OneToMany(targetEntity=Choix::class, mappedBy="question")
+     * @ORM\OneToMany(targetEntity=Choix::class, mappedBy="question", orphanRemoval=true)
      */
     private $choix;
+
+    
+    /**
+     * @ORM\ManyToOne(targetEntity=Test::class, inversedBy="questions")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $test;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Quiz::class, inversedBy="questions")
+     */
+    private $quiz;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $favori;
+
+    
 
     public function __construct()
     {
         $this->choix = new ArrayCollection();
     }
+
+    
 
 
 
@@ -111,4 +134,43 @@ class Question
 
         return $this;
     }
+
+    public function getTest(): ?Test
+    {
+        return $this->test;
+    }
+
+    public function setTest(?Test $test): self
+    {
+        $this->test = $test;
+
+        return $this;
+    }
+
+    public function getQuiz(): ?Quiz
+    {
+        return $this->quiz;
+    }
+
+    public function setQuiz(?Quiz $quiz): self
+    {
+        $this->quiz = $quiz;
+
+        return $this;
+    }
+
+    public function getFavori(): ?bool
+    {
+        return $this->favori;
+    }
+
+    public function setFavori(?bool $favori): self
+    {
+        $this->favori = $favori;
+
+        return $this;
+    }
+
+    
+    
 }

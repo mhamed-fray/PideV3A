@@ -47,6 +47,10 @@ class Offre
      */
     private $localisation_offre;
 
+  
+
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -123,4 +127,6 @@ class Offre
 
         return $this;
     }
+
+    
 }

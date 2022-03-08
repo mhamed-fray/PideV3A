@@ -1,0 +1,74 @@
+{% extends 'backindex/index.html.twig' %}
+
+{% block pagetitle %}
+    Bibliotheque
+{% endblock %}
+
+
+
+
+{%  block body %}
+
+    <div class="card has-table">
+        <header class="card-header">
+            <p class="card-header-title">
+                <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+                Admin
+            </p>
+            
+        </header>
+        <div class="card-content">
+            <table>
+                <thead>
+                <tr>
+                    
+                    
+                    <th>Id</th>
+                    <th>Questions</th>
+                    
+                    
+                    
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for biblio in allbiblio %}
+                {% for question in biblio.questions %}
+                <tr>
+
+                    
+                    <td data-label="Id">{{biblio.id }}</td>
+                    
+                    
+                    <td data-label="Id"><table><tr><td>{{question.contenu}}</td></tr></table></td>
+                
+                    
+                    
+                    
+                    <td class="actions-cell">
+                        <div class="buttons right nowrap">
+                            
+                            <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                                <span class="icon"><a href="{{ path('back_delete_biblio',{'id':question.id}) }}"><i class="mdi mdi-trash-can"></i></a></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+                
+                </tbody>
+            </table>
+            <div class="table-pagination">
+                <div class="flex items-center justify-between">
+                    <div class="buttons">
+                        <button type="button" class="button active">1</button>
+                        <button type="button" class="button">2</button>
+                        <button type="button" class="button">3</button>
+                    </div>
+                    <small>Page 1 of 3</small>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

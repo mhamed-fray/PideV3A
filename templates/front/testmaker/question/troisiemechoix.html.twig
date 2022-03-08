@@ -36,9 +36,7 @@
 
 
 {% block body %}
-<button>
-    <a href="{{ path('add_question') }}" class="btn btn-primary py-2">ajouter</a>
-</button>
+
 <section class="ftco-section bg-light">
 
 	<div class="container">
@@ -74,16 +72,18 @@
 
                                     <div style="padding: 40px">
 									    <div class="choice-container">
-                                            {{ form_start(form_choix_3) }}
+                                            {{ form_start(form_choix_3,{'attr': {'novalidate': 'novalidate'}}) }}
                                                         
-                                            {{ form_label(form_choix_3.contenu, '1er choix',
+                                            {{ form_label(form_choix_3.contenu, '3eme choix',
                                                                 { 'label_attr' : {'class': 'form-style-label'}}
                                             ) 
                                             }}    
-                                            {{ form_errors(form_choix_3.contenu) }}
+                                            
                                             {{ form_widget(form_choix_3.contenu) }}
                                             {{ form_help(form_choix_3.contenu) }}
-                                            {{ form_label(form_choix_3.etatchoix, "correct2") }}
+                                            {{ form_errors(form_choix_3.contenu) }}
+
+                                            {{ form_label(form_choix_3.etatchoix, "correct") }}
                                             {{ form_errors(form_choix_3.etatchoix) }}
                                             {{ form_widget(form_choix_3.etatchoix) }}
                                             {{ form_help(form_choix_3.etatchoix) }}
@@ -96,21 +96,7 @@
                     </div>
                 
                 
-                <div class="row mt-5">
-		          	<div class="col text-center">
-		            	<div class="block-27">
-		            		<ul>
-		        				<li><a href="#">&lt;</a></li>
-		            			<li class="active"><span>1</span></li>
-	                			<li><a href="#">2</a></li>
-	                			<li><a href="#">3</a></li>
-		        				<li><a href="#">4</a></li>
-		        				<li><a href="#">5</a></li>
-                				<li><a href="#">&gt;</a></li>
-             				</ul>
-            			</div>
-          			</div>
-        		</div>
+                
 	   		</div>
 		</div>
 	</div>
