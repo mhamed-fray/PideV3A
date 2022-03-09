@@ -1,0 +1,59 @@
+{% extends 'backindex/index.html.twig' %}
+{%  block body %}
+    <div class="card has-table">
+        <header class="card-header">
+            <p class="card-header-title">
+                <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+                Clients
+            </p>
+            <a href=path{{'#'}} class="card-header-icon">
+                <span class="icon"><i class="mdi mdi-reload"></i></span>
+            </a>
+        </header>
+        <div class="card-content">
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                     <th>nombre de place</th>
+                    <th>evenement</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr {% for r in reservation %}>
+                    <td class="image-cell">
+                        <div class="image">
+                            <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="rounded-full">
+                        </div>
+                    </td>
+                    <td data-label="ID">{{ r.id }}</td>
+                    <td data-label="nombre de place">{{ r.nbplace }}</td>
+                    <td data-label="id evenement">{{ r.eve_id}}</td>
+                    <td class="actions-cell">
+                        <div class="buttons right nowrap">
+                            <div class="buttons right nowrap">
+                            
+                            <a href="{{ path('de',{'id':r.id}) }}" class="button small red --jb-modal" data-target="sample-modal" type="button"> <span class="icon"><i class="mdi mdi-trash-can"></i></span></a>
+                               
+                           
+                        </div>
+                        </div>
+                    </td>
+                </tr {% endfor %}>
+                </tbody>
+            </table>
+            <div class="table-pagination">
+                <div class="flex items-center justify-between">
+                    <div class="buttons">
+                        <button type="button" class="button active">1</button>
+                        <button type="button" class="button">2</button>
+                        <button type="button" class="button">3</button>
+                    </div>
+                    <small>Page 1 of 3</small>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

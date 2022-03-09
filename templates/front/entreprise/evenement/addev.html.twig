@@ -1,0 +1,87 @@
+
+{% extends 'frontindex/index.html.twig' %}
+
+{% block title %}TestAndHire{% endblock %}
+  {% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a><a href="index.html">mes evenements</a></span> </p>
+                    <h1 class="mb-3 bread">evenements</h1>
+                    <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                                    
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+
+
+                <section class="ftco-section bg-light">
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-12 ftco-animate">
+                                <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                                    <div class="one-third mb-4 mb-md-0">
+                                        <div>
+                                            {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+                                            <table>
+                                            <tr>
+                                            <td> {{form_label(form.titre,"titre")}} </td>
+                                            <td> {{form_widget(form.titre)}} </td>
+                                            <td> {{form_errors(form.titre)}} </td>
+                                            </tr>
+                                            <tr>
+                                            <td> {{form_label(form.dat,"date")}} </td>
+                                            <td> {{form_widget(form.dat)}} </td>
+                                            <td> {{form_errors(form.dat)}} </td>
+                                            </tr>
+                                            <tr>
+                                            <td> {{form_label(form.description,"description")}}</td>
+                                            <td> {{form_widget(form.description)}}</td>
+                                            <td> {{form_errors(form.description)}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td> {{form_label(form.image,"image")}}</td>
+                                            <td> {{form_widget(form.image)}}</td>
+                                            <td> {{form_errors(form.image)}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td> {{form_label(form.localisation,"localisation")}}</td>
+                                            <td> {{form_widget(form.localisation)}}</td>
+                                            <td> {{form_errors(form.localisation)}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td> {{form_label(form.nb_participants,"nombre de participants")}}</td>
+                                            <td> {{form_widget(form.nb_participants)}}</td>
+                                            <td> {{form_errors(form.nb_participants)}}</td>
+                                            </tr>
+                                            </table>
+                                            {{form_end(form)}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end -->
+                    </div>
+                </section> 
+
+
+
+
+
+
+{% endblock %}
