@@ -1,0 +1,157 @@
+
+{% extends 'frontindex/index.html.twig' %}
+
+{% block title %}TestandHire{% endblock %}
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a><a href="index.html">mes evenements</a></span> </p>
+                    <h1 class="mb-3 bread">reservation</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+
+
+{#
+<table border=2>
+    <tr>
+        <th>ID</th>
+        <th>titre</th>
+        <th>date evenement</th>
+        <th>description</th>
+        <th>image</th>
+        <th>localisation</th>
+        <th>nombre de participants</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+
+
+        
+    </tr>
+    <tr{% for e in evenement %}>
+        <td>{{ e.ID }}</td>
+        <td>{{ e.titre }}</td>
+        <td>{{ e.dat|date('d/m/Y') }}</td>
+        <td>{{ e.description }}</td>
+        <td>{{ e.image }}</td>
+        <td>{{ e.localisation }}</td>
+        <td>{{ e.nb_participants }}</td>
+        <td><a href="{{ path('modifier',{'id':e.ID}) }}">modifier</a></td>
+        <td><a href="{{ path('d',{'id':e.ID}) }}">Supprimer</a></td>
+
+
+    </tr{% endfor %}>
+</table>
+<a href="{{ path('add') }}">Ajouter un evenement</a>
+
+
+
+
+#}
+
+
+
+
+
+ <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 pr-lg-5">
+                    <div class="row justify-content-center pb-3">
+                        <div class="col-md-12 heading-section ftco-animate">
+                            <span class="subheading">Featured</span>
+                            <h2 class="mb-4"> Evenements recents</h2>
+                        </div>
+                    </div>
+                    {% for e in evenement %}
+                    <div class="row">
+                        <div class="col-md-12 ftco-animate">
+                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                                <div class="one-third mb-4 mb-md-0">
+                                    <div class="job-post-item-header align-items-center">
+                                        <span class="subadge">{{ e.dat|date('d/m/Y') }}</span>
+                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>{{ e.titre }}</a></h2>
+                                    </div>
+                                      <div class="job-post-item-header align-items-center">
+                                        <span class="subadge">{{ e.description }}</span>
+                                        <h2 class="mr-3 text-black"></h2>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>{{ e.nb_participants }}</a></div>
+                                        <div><span class="icon-my_location"></span> <span>{{ e.localisation }}</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                                    <div>
+                                       <a href="{{ path('supp',{'id':e.ID}) }}" class="btn btn-primary py-2">supprimer</a>
+                                    </div>
+                                    <a href="{{  path('modifier',{'id':e.ID})  }}" class="btn btn-primary py-2">modifier</a>
+                                </div>
+                            </div>
+                        </div><!-- end -->
+
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-3 sidebar">
+                    <div class="row justify-content-center pb-3">
+                        <div class="col-md-12 heading-section ftco-animate">
+                            <h2 class="mb-4">Top Recruitments</h2>
+                        </div>
+                    </div>
+                    <div class="sidebar-box ftco-animate">
+                        <div class="">
+                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-1.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
+                            <div class="text p-3">
+                                <h3><a href=path{{'#'}}>Company Company</a></h3>
+                                <p><span class="number">500</span> <span>Open position</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-box ftco-animate">
+                        <div class="">
+                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-2.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
+                            <div class="text p-3">
+                                <h3><a href=path{{'#'}}>Facebook Company</a></h3>
+                                <p><span class="number">700</span> <span>Open position</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-box ftco-animate">
+                        <div class="">
+                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-3.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
+                            <div class="text p-3">
+                                <h3><a href=path{{'#'}}>IT Programming INC</a></h3>
+                                <p><span class="number">700</span> <span>Open position</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-box ftco-animate">
+                        <div class="">
+                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-4.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
+                            <div class="text p-3">
+                                <h3><a href=path{{'#'}}>IT Programming INC</a></h3>
+                                <p><span class="number">700</span> <span>Open position</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

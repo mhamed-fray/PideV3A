@@ -2,11 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\EvenementRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\EvenementRepository;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=EvenementRepository::class)
+ * @Vich\Uploadable()
  */
 class Evenement
 {
@@ -18,22 +25,27 @@ class Evenement
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $titre;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
-    private $date_ev;
+    private $dat;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $description;
 
+
     /**
-     * @ORM\Column(type="string", length=255)
+     *  @ORM\Column(type="string", length=255)
+     *     @Assert\File(mimeTypes={"image/jpeg"})
      */
     private $image;
 
@@ -45,12 +57,33 @@ class Evenement
     /**
      * @ORM\Column(type="integer")
      */
-    private $nbr_participants;
+    public $nb_participants;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="event", orphanRemoval=true)
+     */
+    private $comments;
+
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $note;
+
+   
+   
+
+    public function __construct()
+    {
+        
+        $this->comments = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
+    } 
 
     public function getTitre(): ?string
     {
@@ -64,14 +97,14 @@ class Evenement
         return $this;
     }
 
-    public function getDateEv(): ?\DateTimeInterface
+    public function getDat(): ?\DateTimeInterface
     {
-        return $this->date_ev;
+        return $this->dat;
     }
 
-    public function setDateEv(\DateTimeInterface $date_ev): self
+    public function setDat(\DateTimeInterface $dat): self
     {
-        $this->date_ev = $date_ev;
+        $this->dat = $dat;
 
         return $this;
     }
@@ -88,12 +121,12 @@ class Evenement
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage($image)
     {
         $this->image = $image;
 
@@ -112,15 +145,78 @@ class Evenement
         return $this;
     }
 
-    public function getNbrParticipants(): ?int
+    public function getnb_participants(): ?int
     {
-        return $this->nbr_participants;
+        return $this->nb_participants;
     }
 
-    public function setNbrParticipants(int $nbr_participants): self
+    public function setnb_participants(int $nb_participants): self
     {
-        $this->nbr_participants = $nbr_participants;
+        $this->nb_participants += $nb_participants;
 
         return $this;
     }
+
+    
+    /**
+     * @return Collection|Comments[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getEvent() === $this) {
+                $comment->setEvent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Reservation[]
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations[] = $reservation;
+            $reservation->setEve_id($this);
+            $this->setnb_participants($reservation.getNbplace());
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getEve_id() === $this) {
+                $reservation->setEve_id(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

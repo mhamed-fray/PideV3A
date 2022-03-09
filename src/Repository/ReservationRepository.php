@@ -47,4 +47,16 @@ class ReservationRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function AfficherParIdEv($id)
+    {
+    
+        return $this->createQueryBuilder('r')
+                    ->select('r')
+                    ->where('r.eve_id = :id ')
+                    ->setParameter('id',$id)
+                    ->getQuery()
+                    ->getResult();
+    }
 }

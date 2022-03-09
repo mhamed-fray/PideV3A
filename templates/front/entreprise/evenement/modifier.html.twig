@@ -1,0 +1,53 @@
+
+{% extends 'frontindex/index.html.twig' %}
+
+{% block title %}TestandHire{% endblock %}
+   {% block r2 %}
+       <div class="overlay"></div>
+
+       <div class="container">
+           <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
+
+               <div class="col-md-10 d-flex align-items-center ftco-animate">
+                   <h1>modifier evenement</h1>
+               </div>
+           </div>
+       </div>
+   {% endblock %}
+{% block body %}
+
+{{form_start(form)}}
+<table>
+<tr>
+<td> {{form_label(form.titre,"titre")}} </td>
+<td> {{form_widget(form.titre)}} </td>
+<td> {{form_errors(form.titre)}} </td>
+</tr>
+<tr>
+<td> {{form_label(form.dat,"date")}} </td>
+<td> {{form_widget(form.dat)}} </td>
+<td> {{form_errors(form.dat)}} </td>
+</tr>
+<tr>
+<td> {{form_label(form.description,"description")}}</td>
+<td> {{form_widget(form.description)}}</td>
+<td> {{form_errors(form.description)}}</td>
+</tr>
+<tr>
+<td> {{form_label(form.image,"image")}}</td>
+<td> {{form_widget(form.image)}}</td>
+<td> {{form_errors(form.image)}}</td>
+</tr>
+<tr>
+<td> {{form_label(form.localisation,"localisation")}}</td>
+<td> {{form_widget(form.localisation)}}</td>
+<td> {{form_errors(form.localisation)}}</td>
+</tr>
+<tr>
+<td> {{form_label(form.nb_participants,"nombre de participants")}}</td>
+<td> {{form_widget(form.nb_participants)}}</td>
+<td> {{form_errors(form.nb_participants)}}</td>
+</tr>
+</table>
+{{form_end(form)}}
+{% endblock %}
