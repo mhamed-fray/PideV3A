@@ -1,0 +1,191 @@
+{% extends 'frontindex/index.html.twig' %}
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+                <a class="nav-link " id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1">Je suis une entreprise</a>
+
+                <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false" style="margin-left:70px">je suis un candidat</a>
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('front/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/ionicons.min.css' )}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{asset('front/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css') }}">
+{% endblock %}
+{% block body %}
+
+    {% for Offre in Offre %}
+        <div class="col-lg-9 pr-lg-4" >
+            <div class="row">
+                <div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:15000px" >
+                    <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                        <div class="one-third mb-4 mb-md-0">
+                            <div class="job-post-item-header align-items-center">
+                                <span  class="icon-layers"  >Partime</span>
+
+                                <h2 class="mr-3 text-black"><a href="#">{{Offre.titre }}</a></h2>
+
+
+
+
+
+
+
+
+
+                            </div>
+
+                            <div class="job-post-item-body d-block d-md-flex">
+                                <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                                <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+                                <div><span class="mr-3 text-black"  ></span> <span data-href="{{ path("tous_offres2", { 'id': Offre.id } ) }}" data-toggle="modal" data-target="#detailsModal" class="fas fa-info-circle fa-1x" title="Détails" style="color:white;">Western City, UK</span></div>
+                            </div>
+                        </div>
+
+                        <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+
+
+                        <span>
+                            <a href="{{ path('front/') }}" class="btn btn-primary py-2">Postuler</a>
+                        </span>
+
+
+                        </div>
+                    </div>
+                </div><!-- end -->
+            </div>
+        </div>
+
+
+        <div  class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <h5 class="modal-title">Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="card" style="background:transparent;">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-ok collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Détails
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        secteur :  {{ Offre.secteur}}<hr>
+                                        description :{{ Offre.description}}<hr>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    {% endfor %}
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="block-27">
+                <ul>
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <table class="table table-striped   ">
+        <tbody>
+
+        <tr>
+            <th>id</th>
+            <th>titre</th>
+            <th>secteur</th>
+            <th>description</th>
+            <th>salaire</th>
+            <th>date de publication</th>
+
+
+        </tr>
+        {% for Offre in Offre %}
+            <tr>
+                <td>{{Offre.id}}</td>
+                <td>{{Offre.titre }}</td>
+                <td>{{Offre.secteur}}</td>
+                <td>{{Offre.description}}</td>
+                <td>{{Offre.salaire}}</td>
+                <td>{{Offre.datee_publication}}</td>
+
+                <td> <a href="{{ path('edit_offre',{'id':Offre.id}) }}" class="btn btn-secondary">editer</a> </td>
+                <td> <a href="{{ path('supprimer_offre',{'id':Offre.id}) }}" class="btn btn-secondary">supprimer</a> </td>
+
+
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tr>
+            <th>
+
+            </th>
+        </tr>
+
+
+    </table>
+{% endblock %}

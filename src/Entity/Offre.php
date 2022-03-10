@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\OffreRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,38 +21,51 @@ class Offre
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $titre;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $secteur;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $description;
 
     /**
+     * @Assert\NotNull
      * @ORM\Column(type="float")
      */
     private $salaire;
 
     /**
-     * @ORM\Column(type="date")
+     * @Assert\NotBlank
+     * @ORM\Column(type="string")
      */
-    private $date_publication;
+    public $datee_publication;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Candidature::class, mappedBy="Offre", orphanRemoval=true)
+     */
+    private $candidatures;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $localisation_offre;
+    private $localisation;
 
-  
+    public function __construct()
+    {
+        $this->candidatures = new ArrayCollection();
+    }
 
-    
+
 
     public function getId(): ?int
     {
@@ -104,29 +120,64 @@ class Offre
         return $this;
     }
 
-    public function getDatePublication(): ?\DateTimeInterface
+    public function getDateePublication():  ?string
     {
-        return $this->date_publication;
+        return $this->datee_publication;
     }
 
-    public function setDatePublication(\DateTimeInterface $date_publication): self
+    public function setDateePublication(String $datee_publication): self
     {
-        $this->date_publication = $date_publication;
+        $this->datee_publication = $datee_publication;
 
         return $this;
     }
 
-    public function getLocalisationOffre(): ?string
+    /**
+     * @return Collection|Candidature[]
+     */
+    public function getCandidatures(): Collection
     {
-        return $this->localisation_offre;
+        return $this->candidatures;
     }
 
-    public function setLocalisationOffre(string $localisation_offre): self
+    public function addCandidature(Candidature $candidature): self
     {
-        $this->localisation_offre = $localisation_offre;
+        if (!$this->candidatures->contains($candidature)) {
+            $this->candidatures[] = $candidature;
+            $candidature->setOffre($this);
+        }
 
         return $this;
     }
 
-    
+    public function removeCandidature(Candidature $candidature): self
+    {
+        if ($this->candidatures->removeElement($candidature)) {
+            // set the owning side to null (unless already changed)
+            if ($candidature->getOffre() === $this) {
+                $candidature->setOffre(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->titre;
+    }
+
+    public function getLocalisation(): ?string
+    {
+        return $this->localisation;
+    }
+
+    public function setLocalisation(string $localisation): self
+    {
+        $this->localisation = $localisation;
+
+        return $this;
+    }
+
+
 }

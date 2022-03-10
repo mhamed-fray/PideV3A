@@ -1,0 +1,166 @@
+{% extends 'frontindex/index.html.twig' %}
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container-fluid px-md-4	">
+            <a class="navbar-brand" href={{ path('front_entreprise_profil') }}><img src="{{ asset ('front/images/273611990_485088496513727_7369103203946488337_n.png') }}" style=height:60px;  alt="Example"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="{{ path('front_entreprise_profil')}}" class="nav-link">Mon Profil</a></li>
+                    <li class="nav-item "><a  href="{{ path('postuleroffre')}}"class="nav-link">Consulter les offres</a></li>
+                    <li class="nav-item "><a  href="{{ path('contact')}}"class="nav-link">Contactez -nous</a></li>
+
+                    <li class="nav-item "><a  href="{{ path('front_entreprise_tousevenements')}}"class="nav-link">Consulter les evenements</a></li>
+                    <li class="nav-item "><a  href="{{ path('front_test_taker_abonnement')}}"class="nav-link">Consulter les abonnements</a></li>
+                    <li class="nav-item cta cta-colored"><a class="nav-link" >Se déconnecter</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block body %}
+
+    {% for Offre in Offre %}
+        <div class="col-lg-9 pr-lg-4" >
+            <div class="row">
+                <div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:15000px" >
+                    <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                        <div class="one-third mb-4 mb-md-0">
+                            <div class="job-post-item-header align-items-center">
+                                <span  class="icon-layers"  >Partime</span>
+                                <span  class="icon-money"  >{{Offre.salaire }} Dinars</span>
+
+                                <h2 class="mr-3 text-black"><a href="#">{{Offre.titre }}</a></h2>
+
+
+
+
+
+
+
+
+
+                            </div>
+
+                            <div class="job-post-item-body d-block d-md-flex">
+                                <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ Offre.secteur }}</a></div>
+                                <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ Offre.datee_publication }}</a></div>
+                                <div><span class="icon-my_location"></span> <span>{{Offre.localisation }}</span></div>
+                                <div><span class="mr-3 text-black"  ></span> <span data-href="{{ path("tous_offres2", { 'id': Offre.id } ) }}" data-toggle="modal" data-target="#detailsModal" class="fas fa-info-circle fa-1x" title="Détails" style="color:white;">Western City, UK</span></div>
+                            </div>
+                        </div>
+
+                        <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+
+
+                        <span>
+                            <a href="{{ path('ajouterdemande', {'id': Offre.id }) }}" class="btn btn-primary py-2">postuler</a>
+                        </span>
+
+
+                        </div>
+                    </div>
+                </div><!-- end -->
+            </div>
+        </div>
+
+
+        <div  class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <h5 class="modal-title">Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="card" style="background:transparent;">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-ok collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Détails
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        secteur :  {{ Offre.secteur}}<hr>
+                                        description :{{ Offre.description}}<hr>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    {% endfor %}
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="block-27">
+                <ul>
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="flash">
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Load Flashy default JavaScript -->
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+        {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+        <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+
+    </div>
+    </div>
+
+
+
+
+{% endblock %}

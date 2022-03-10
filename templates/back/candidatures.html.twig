@@ -18,7 +18,7 @@
 
 
                 <label for="search-by-column"></label>
-               </p>
+                </p>
             </div>
 
             </p>
@@ -26,76 +26,75 @@
                 <span class="icon"><i class="mdi mdi-reload"></i></span>
             </a>
         </header>
-    <body>
-    <div class="container">
+        <body>
+        <div class="container">
 
-        <div class="row justify-content-md-center">
-            <div class="col-8">
+            <div class="row justify-content-md-center">
+                <div class="col-8">
 
-                <div class="row">
+                    <div class="row">
 
 
                         <label for="search-by-column"></label>
                     </div>
 
+                </div>
+            </div>
+
+            <div class="card-content">
+                <table id="example" class="mdi mdi-reload" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>message</th>
+                        <th>etat_candidature</th>
+                        <th>Offre</th>
+                        <th>action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for candidature in candidature %}
+                    <tr>
+                        <td>{{ candidature.id }}</td>
+                        <td>{{ candidature.message }}</td>
+                        <td>{{ candidature.etat_candidature }}</td>
+                        <td>{{ candidature.Offre }}</td>
+                        <td class="actions-cell">
+                            <div class="buttons right nowrap">
+                                 <span>
+
+                            <a href="{{ path('delete_condidature_back',{'id':candidature.id}) }}" class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i> supprimer</a>
+                        </span>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                    {% endfor %}
+                </table>
             </div>
         </div>
-
-        <div class="card-content">
-        <table id="example" class="mdi mdi-reload" style="width:100%">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>Demo Name</td>
-                <td>demo1@gmail.com</td>
-                <td>
-                    <a href="" class="btn btn-dark">Détails</a>
-                    <a href="" class="btn btn-dark">Modifier</a>
-                    <a href="" class="btn btn-danger"
-                       onclick="return confirm('Etes-vous sûr de supprimer cet article?');">Supprimer</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Sample Name</td>
-                <td>demo2@gmail.com</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Example Name</td>
-                <td>example@gmail.com</td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            function searchByColumn(table) {
-                var defaultSearch = 1 //Name
-                $(document).on('change', '#select-column', function() {
-                    defaultSearch = this.value;
-                });
-                $(document).on('change', '#search-by-column', function() {
-                    table.search('').columns().search('').draw();
-                    table.column(defaultSearch).search(this.value).draw();
-                });
-            }
-            var table = $('#example').DataTable();
-            searchByColumn(table);
-        } );
-    </script>
-    </body>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                function searchByColumn(table) {
+                    var defaultSearch = 1 //Name
+                    $(document).on('change', '#select-column', function() {
+                        defaultSearch = this.value;
+                    });
+                    $(document).on('change', '#search-by-column', function() {
+                        table.search('').columns().search('').draw();
+                        table.column(defaultSearch).search(this.value).draw();
+                    });
+                }
+                var table = $('#example').DataTable();
+                searchByColumn(table);
+            } );
+        </script>
+        </body>
     </div>
     </html>
 

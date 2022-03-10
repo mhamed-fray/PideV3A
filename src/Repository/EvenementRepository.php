@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Evenement;
-use App\Entity\Reservation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,31 +17,6 @@ class EvenementRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Evenement::class);
-    }
-    public function remove(Evenement $customer)
-{
-    $this->manager->remove($customer);
-    $this->manager->flush();
-}
-
-
-
- 
-
-    
-
-    public function nombreDePlace($value,$id)
-    {
-        return $this->createQueryBuilder('e')
-        ->update()
-        ->set('e.nb_participants',':value')
-        ->where('e.eve_id = :id')
-        ->setParameter('value', $value)
-        ->setParameter('id', $id)
-        ->getQuery()
-       ->execute();
-        
-
     }
 
     // /**
@@ -73,12 +47,4 @@ class EvenementRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function affichetrie()
-    {
-        return $this->createQueryBuilder('e')
-        ->select('e')
-        ->orderBy('e.dat','DESC')
-        ->getQuery()
-        ->getResult();
-    }
 }

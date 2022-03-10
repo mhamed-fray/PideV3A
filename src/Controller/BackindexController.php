@@ -17,15 +17,4 @@ class BackindexController extends AbstractController
             'controller_name' => 'BackindexController',
         ]);
     }
-     /**
-         * @param EvenementRepository $repository
-         * @return \Symfony\Component\HttpFundation\Response
-         * @Route("/allevenements")
-         */
-        public function Afficheevad(EvenementRepository $repository)
-        {
-            $Even=$repository->findAll();
-            return $this->render('back/admin/evenements.html.twig',
-                ['evenement'=>$Even]);
-        }
 }
