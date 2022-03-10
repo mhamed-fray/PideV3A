@@ -309,65 +309,6 @@
        </div>
 
    {% endblock %}
-
 {% block body %}
-<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
 
-    <div class="col-md-10 d-flex align-items-center ftco-animate">
-    <div class="best-plan">
-        <div class="container">
-            <div class="best-plan__head">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="best-plan__title">Nos Abonnements</h3>
-                        <input type="button" class="btn btn-default" data-dismiss="modal">
-                        <a href="{{ path('all_abonnementsASC') }}"class="btn btn-secondary">Moins cher </a>
-                        <input type="button" class="btn btn-default" data-dismiss="modal">
-                        <a href="{{ path('all_abonnementsDSC') }}"class="btn btn-secondary">Plus cher </a>
-                    </div>
-                </div>
-            </div>
-            <div class="b_plan_body">
-                <div class="row">
-                    {% for abonnement in abonnements %}
-                    <div class="col-md-4 col-sm-4">
-                        <!-- price plans item begin -->
-                        <div class="b-price-plan">
-                            <div class="b-price-plan__item b-price-plan__head">
-                                <h3>{{ abonnement.type }}</h3>
-                            </div>
-                            <div class="b-price-plan__item b-price-plan__cost">
-                                <div class="cost-title">{{ abonnement.cout }}</div>
-                            </div>
-                            <ul class="p_plan_list">
-                                <li><i class="fa fa-diamond" aria-hidden="true"></i> {{ abonnement.nom }}</li>
-                                <li><i class="fa fa-cogs" aria-hidden="true"></i> {{ abonnement.description }}</li>
-                                <li><i class="fa fa-cogs" aria-hidden="true"></i> {{ abonnement.likes }}</li>
-                            </ul>
-                            <div class="b-price-plan__item price_foot">
-
-
-                                <a href="{{ path('AimerAbo',{ida:abonnement.id}) }}" class="btn btn-warning price_btn">
-                                    <i class="fa-solid fa-heart"></i>
-                                    <span>Aimer</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
-                                </a>
-
-
-
-                                <a href="{{ path('checkout',{id:abonnement.id}) }}" class="btn btn-warning price_btn">
-                                    <span>Buy now</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
 {% endblock %}
