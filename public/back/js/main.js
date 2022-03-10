@@ -1,6 +1,7 @@
 "use strict";
 
 /* Aside & Navbar: dropdowns */
+
 Array.from(document.getElementsByClassName('dropdown')).forEach(function (elA) {
   elA.addEventListener('click', function (e) {
     if (e.currentTarget.classList.contains('navbar-item')) {

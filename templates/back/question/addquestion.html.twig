@@ -1,0 +1,43 @@
+{% extends 'backindex/index.html.twig' %}
+
+{% block pagetitle %}
+
+Add Question
+
+{% endblock %}
+
+{%  block body %}
+<section class="section main-section">
+    <div class="card mb-6">
+        <header class="card-header">
+            <p class="card-header-title">
+                <span class="icon"><i class="mdi mdi-ballot"></i></span>
+                Forms
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="container mt-4">
+                <h2> Ajouter question </h2>
+                {{ form_start(form) }}
+                
+
+                    {{ form_label(form.contenu, {'label_attr' : {'class': 'form-style-label'}}) }}
+                    {{ form_errors(form.contenu, {'attr' : {'class': 'form-style-textfield'}}) }}
+                    {{ form_widget(form.contenu) }}
+                    {{ form_help(form.contenu) }}
+
+                    
+
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+    
+    </div>
+  </section>
+    
+       
+   
+
+{% endblock %}

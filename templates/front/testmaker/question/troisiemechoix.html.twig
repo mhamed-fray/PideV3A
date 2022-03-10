@@ -1,0 +1,115 @@
+{% extends 'frontindex/index.html.twig' %}
+
+
+{% block cssquestion %}
+
+{% endblock %}
+
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block body %}
+
+<section class="ftco-section bg-light">
+
+	<div class="container">
+    
+
+    
+		<div class="row" style="display:block">
+			<div class="col-lg-9 pr-lg-4" style="max-width:100%">
+				    <div class="row">
+						<div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:10000px">
+                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center" >
+                                <div class="one-third mb-4 mb-md-0">
+                                    <div class="job-post-item-header align-items-center">
+                                        <span class="subadge">Partime</span>
+                                        <h2 class="mr-3 text-black"><a href="#">{{test_replacement[0].contenu}}</a></h2>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                        <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
+                                    </div>
+                                </div>
+                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                                     
+                                </div>
+                            </div>
+							
+                            <div class="questions" >
+							    <div class="in-question-container">
+                                    <diV class="question_title">
+                                        {{question.contenu}}
+                                    </div>
+                                    
+
+                                    <div style="padding: 40px">
+									    <div class="choice-container">
+                                            {{ form_start(form_choix_3,{'attr': {'novalidate': 'novalidate'}}) }}
+                                                        
+                                            {{ form_label(form_choix_3.contenu, '3eme choix',
+                                                                { 'label_attr' : {'class': 'form-style-label'}}
+                                            ) 
+                                            }}    
+                                            
+                                            {{ form_widget(form_choix_3.contenu) }}
+                                            {{ form_help(form_choix_3.contenu) }}
+                                            {{ form_errors(form_choix_3.contenu) }}
+
+                                            {{ form_label(form_choix_3.etatchoix, "correct") }}
+                                            {{ form_errors(form_choix_3.etatchoix) }}
+                                            {{ form_widget(form_choix_3.etatchoix) }}
+                                            {{ form_help(form_choix_3.etatchoix) }}
+                                            {{ form_end(form_choix_3) }}
+                                        </div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+	   		</div>
+		</div>
+	</div>
+</section>
+        {% endblock %}
+
+
+
+
+
+
+
+
+
+
+

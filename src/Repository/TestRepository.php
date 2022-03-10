@@ -47,4 +47,29 @@ class TestRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function Sujetall()
+    {
+        $entityManager=$this->getEntityManager();
+        $query=$entityManager
+            ->createQuery('SELECT t , s FROM APP\Entity\Test t
+            JOIN t.Sujet s ');
+        return $query->getResult();
+    }
+
+    public function findByNamePopular(string $search = null)
+    {
+        $queryBuilder = $this->createQueryBuilder('test')
+
+            ->where('test.titre LIKE :searchTerm')
+            ->orWhere('test.datedebut LIKE :searchTerm')
+            ->orWhere('test.datefin LIKE :searchTerm')
+
+            ->setParameter('searchTerm', '%'.$search.'%');
+
+
+        return $queryBuilder
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
 }

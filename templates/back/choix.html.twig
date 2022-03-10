@@ -1,0 +1,66 @@
+{% extends 'backindex/index.html.twig' %}
+
+{% block pagetitle %}
+    Choix
+{% endblock %}
+
+
+
+
+{%  block body %}
+
+    <div class="card has-table">
+        <header class="card-header">
+            <p class="card-header-title">
+                <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+                Clients
+            </p>
+            
+        </header>
+        <div class="card-content">
+            <table>
+                <thead>
+                <tr>
+                    
+                    
+                    <th>Id</th>
+                    <th>Contenu</th>
+                    <th>Etatchoix</th>
+                    <th>Question</th>
+                    <th>test associer</th>
+                    
+                    
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for choix in allchoix %}
+                <tr>
+
+                    
+                    <td data-label="Id">{{choix.id }}</td>
+                    <td data-label="Contenu">{{choix.contenu }}</td>
+                    <td data-label="Etatchoix">{{choix.etatchoix }}</td>
+                    <td data-label="Id">{{choix.question.contenu}}</td>
+                    <td data-label="Id">{{choix.question.test.titre}}</td>
+                    
+                    
+                   
+                </tr>
+                {% endfor %}
+                
+                </tbody>
+            </table>
+            <div class="table-pagination">
+                <div class="flex items-center justify-between">
+                    <div class="buttons">
+                        <button type="button" class="button active">1</button>
+                        <button type="button" class="button">2</button>
+                        <button type="button" class="button">3</button>
+                    </div>
+                    <small>Page 1 of 3</small>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

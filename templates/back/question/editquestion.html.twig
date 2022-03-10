@@ -1,0 +1,44 @@
+{% extends 'backindex/index.html.twig' %}
+
+{% block pagetitle %}
+
+Edit Question
+
+{% endblock %}
+
+{%  block body %}
+<section class="section main-section">
+    <div class="card mb-6">
+        <header class="card-header">
+            <p class="card-header-title">
+                <span class="icon"><i class="mdi mdi-ballot"></i></span>
+                Forms
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="container mt-4">
+                <h2 style="margin: 0 0 41px 0;font-size: 22px;"> Editer question </h2>
+                {{ form_start(form) }}
+                
+
+                    {{ form_label(form.contenu) }}
+                    {{ form_errors(form.contenu) }}
+                    {{ form_widget(form.contenu) }}
+                    {{ form_help(form.contenu) }}
+
+
+                <button type="submit" style="background-color: rgba(0, 0, 0, 0.30); border: 3px solid #222222; border-radius: 8px;padding: 5px 10px 5px 10px;margin: 36px 0 0 9px;">Editer</button>
+
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+    
+    </div>
+  </section>
+    
+       
+   
+
+{% endblock %}
