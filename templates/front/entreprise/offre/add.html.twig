@@ -1,0 +1,138 @@
+{% extends 'frontindex/index.html.twig' %}
+{% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('front/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/ionicons.min.css' )}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{asset('front/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet'>
+{% endblock %}
+
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Mes Offres</h1>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+{% block body %}
+    <div class="container mt-4">
+        <h2 class=" text-success" >  Ajouter Offre  </h2>
+        {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.titre,"titre") }}</div>
+
+            {{ form_widget(form.titre) }}
+
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.titre) }}
+            </div>
+
+
+
+
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.secteur,"   secteur        ") }}</div>
+
+            {{ form_widget(form.secteur) }}
+
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.secteur) }}
+            </div>
+            <br></br>
+        </div>
+
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.description,"description") }}</div>
+            <div class="form-group">
+                {{ form_widget(form.description,{attr: {'class': 'form-control'}}) }}
+            </div>
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.description) }}
+            </div>
+        </div>
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.salaire,"salaire") }}</div>
+            <div class="form-group">
+                {{ form_widget(form.salaire,{attr: {'class': 'form-control'}}) }}
+            </div>
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.salaire) }}
+            </div></div>
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.datee_publication,"datee_publication") }}</div>
+            <div class="form-group">
+                {{ form_widget(form.datee_publication,{attr: {'class': 'form-control'}}) }}
+            </div>
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.datee_publication) }}
+            </div>
+        </div>
+
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.localisation,"localisation") }}</div>
+            <div class="form-group">
+                {{ form_widget(form.localisation,{attr: {'class': 'form-control'}}) }}
+            </div>
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.localisation) }}
+            </div>
+        </div>
+
+
+
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

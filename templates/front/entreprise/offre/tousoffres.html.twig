@@ -1,292 +1,206 @@
 {% extends 'frontindex/index.html.twig' %}
 
-{% block title %}Hello offreController!{% endblock %}
-   {% block r2 %}
-       <div class="overlay"></div>
-
-       <div class="container">
-           <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
-
-               <div class="col-md-10 d-flex align-items-center ftco-animate">
-
-               </div>
-           </div>
-       </div>
-
-   {% endblock %}
-{% block body %}
-    <section class="ftco-section bg-light">
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-9 pr-lg-5">
-                    <div class="row justify-content-center pb-3">
-                        <div class="col-md-12 heading-section ftco-animate">
-                            <span class="subheading">Recently Added Jobs</span>
-                            <h2 class="mb-4">Featured Jobs Posts For This Week</h2>
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Mes Offres</h1>
+                    <div>
+
+
+                        <div class="search-model">
+                            <div class="h-100 d-flex align-items-center justify-content-center">
+                                <div class="search-close-switch"><i class="icon_close"></i></div>
+
+                                <form class="search-model-form" action="{{ path('serie-search') }}">
+                                    <input
+                                            type="search"
+                                            name="query"
+                                            class="form-control"
+                                            placeholder="Search..Secteur,Salaire..."
+                                            aria-label="Search"
+                                    >
+
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Partime</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Frontend Development</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>Facebook, Inc.</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
 
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Fulltime</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Full Stack Developer</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>Google, Inc.</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Freelance</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Open Source Interactive Developer</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>New York Times</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{'job-single'}} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Partime</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Frontend Development</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>Facebook, Inc.</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Temporary</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Open Source Interactive Developer</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>New York Times</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Fulltime</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Full Stack Developer</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>Google, Inc.</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Freelance</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Open Source Interactive Developer</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>New York Times</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Internship</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Frontend Development</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>Facebook, Inc.</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">Temporary</span>
-                                        <h2 class="mr-3 text-black"><a href=path{{'#'}}>Open Source Interactive Developer</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="icon-layers"></span> <a href=path{{'#'}}>New York Times</a></div>
-                                        <div><span class="icon-my_location"></span> <span>Western City, UK</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <div>
-                                        <a href=path{{'#'}} class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                                            <span class="icon-heart"></span>
-                                        </a>
-                                    </div>
-                                    <a href=path{{ 'job-single' }} class="btn btn-primary py-2">Apply Job</a>
-                                </div>
-                            </div>
-                        </div><!-- end -->
                     </div>
                 </div>
-                <div class="col-lg-3 sidebar">
-                    <div class="row justify-content-center pb-3">
-                        <div class="col-md-12 heading-section ftco-animate">
-                            <h2 class="mb-4">Top Recruitments</h2>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('front/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/ionicons.min.css' )}}">
+    <style>
+        .flash{padding-left: 1000px;}
+    </style>
+
+    <link rel="stylesheet" href="{{asset('front/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{asset('front/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css') }}">
+{% endblock %}
+{% block body %}
+                        <span>
+                            <a href="{{ path('ajout_offre') }}" class="btn btn-success py-2">Ajouter Offre</a>
+                        </span>
+
+{% for Offre in Offre %}
+    <div class="col-lg-9 pr-lg-4" >
+        <div class="row">
+            <div class="col-md-12 ftco-animate fadeInUp ftco-animated" style="width:15000px" >
+                <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                    <div class="one-third mb-4 mb-md-0">
+                        <div class="job-post-item-header align-items-center">
+                            <span  class="icon-layers"  >Partime</span>
+                            <span  class="icon-money"  >{{Offre.salaire }} Dinars</span>
+
+                            <h2 class="icon-layers"><a href="#">{{Offre.titre }}</a></h2>
+                        </div>
+
+                        <div class="job-post-item-body d-block d-md-flex">
+                            <div class="mr-3"><span class="icon-layers" ></span> <a href="#">{{ Offre.secteur }}</a></div>
+                            <div class="mr-3"><span class="icon-layers" ></span> <a href="#">{{ Offre.datee_publication }}</a></div>
+
+
+
+
+
+                            <div><span class="icon-my_location" ></span> <span>{{Offre.localisation }}</span></div>
+
+                            <div><span class="icon-my_location" data-href="{{ path('tous_offres2', { 'id': Offre.id } ) }}" data-toggle="modal" data-target="#detailsModal" class="fas fa-info-circle fa-1x" title="Détails" style="color:white;" ></span> consulter offre<span></span></div>
+
                         </div>
                     </div>
-                    <div class="sidebar-box ftco-animate">
-                        <div class="">
-                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-1.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
-                            <div class="text p-3">
-                                <h3><a href=path{{'#'}}>Company Company</a></h3>
-                                <p><span class="number">500</span> <span>Open position</span></p>
-                            </div>
-                        </div>
+
+                    <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+
+
+                        <span>
+                            <a href="{{ path('supprimer_offre',{'id':Offre.id}) }}" class="btn btn-outline-danger py-2">supprimer</a>
+                        </span>
+                        <span style="padding-left: 10px">
+                             <a href="{{ path('edit_offre',{'id':Offre.id}) }}" class="btn btn-outline-warning py-2">editer</a>
+                        </span>
                     </div>
-                    <div class="sidebar-box ftco-animate">
-                        <div class="">
-                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-2.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
-                            <div class="text p-3">
-                                <h3><a href=path{{'#'}}>Facebook Company</a></h3>
-                                <p><span class="number">700</span> <span>Open position</span></p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="sidebar-box ftco-animate">
-                        <div class="">
-                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-3.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
-                            <div class="text p-3">
-                                <h3><a href=path{{'#'}}>IT Programming INC</a></h3>
-                                <p><span class="number">700</span> <span>Open position</span></p>
-                            </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        </div>
+
+
+
+    <div  class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content">
+            <div class="modal-header" >
+                <h5 class="modal-title">Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <script>
+                    $('#detailsModal').on('show.bs.modal', function(e) {
+                        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+                    });
+                </script>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="card" style="background:transparent;">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-ok collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Détails
+                                </button>
+                            </h2>
                         </div>
-                    </div>
-                    <div class="sidebar-box ftco-animate">
-                        <div class="">
-                            <a href=path{{'#'}} class="company-wrap"><img src={{ asset('front/images/company-4.jpg') }} class="img-fluid" alt="Colorlib Free Template"></a>
-                            <div class="text p-3">
-                                <h3><a href=path{{'#'}}>IT Programming INC</a></h3>
-                                <p><span class="number">700</span> <span>Open position</span></p>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body" >
+
+
+                                Description de L'offre :   {{ Offre.description}}<hr>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
-    </section>
+
+    </div>
+    </div>
+
+{% endfor %}
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="flash">
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Load Flashy default JavaScript -->
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+        {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+        <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+
+    </div>
+
+
+
+    </div>
+
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CandidatureRepository;
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,12 +27,30 @@ class Candidature
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $etat_candidature;
+    public $etat_candidature;
 
     /**
+
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length(
+     *      min = 20,
+     *      max = 200,
+
+     * )
      */
+
     private $message;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Offre::class, inversedBy="candidatures")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Offre;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
 
     public function getId(): ?int
     {
@@ -69,6 +89,30 @@ class Candidature
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getOffre(): ?Offre
+    {
+        return $this->Offre;
+    }
+
+    public function setOffre(?Offre $Offre): self
+    {
+        $this->Offre = $Offre;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

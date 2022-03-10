@@ -39,7 +39,9 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="{{ path('front_entreprise_profil')}}" class="nav-link">Mon Profil</a></li>
-                <li class="nav-item "><a  href="{{ path('tous_offres')}}"class="nav-link">Consulter les offres</a></li>
+                <li class="nav-item "><a  href="{{ path('tous_offres')}}"class="nav-link">Consulter les offress</a></li>
+                <li class="nav-item "><a  href="{{ path('tous_condidatures')}}"class="nav-link">Les Condidatures</a></li>
+
                 <li class="nav-item "><a  href="{{ path('front_entreprise_tousevenements')}}"class="nav-link">Consulter les evenements</a></li>
                 <li class="nav-item "><a  href="{{ path('front_test_taker_abonnement')}}"class="nav-link">Consulter les abonnements</a></li>
                 <li class="nav-item cta cta-colored"><a class="nav-link" >Se déconnecter</a></li>
@@ -332,79 +334,6 @@
             </div>
         </div>
     </section>
-{% endblock %}
-{% block footer %}
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">A propos de nous</h2>
-                        <p>Notre plateforme est sur mesure de recrutement qui permet de rechercher des candidats ou des emplois dans le but d'aider les entreprises dans la                          recherche de candidats et de meme d'aider les candidats dans leur recherche d'emploi.</p>
-                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                            <li class="ftco-animate"><a href="https://twitter.com/MoezMahmoud12?fbclid=IwAR2DLy3_d70Rnh4nDEDLPDTBTZr7UXUpsxbEOCsJzmnR3AZ2zRPtDxub-cM"><span class="icon-twitter"></span></a></li>
-                            <li class="ftco-animate"><a href=path{{'#'}}><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href=path{{'#'}}><span class="icon-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Test Taker</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ path('front_entreprise_profil')}}" class="pb-1 d-block">Mon Profil</a></li>
-
-                            <li><a href="{{ path('tous_offres')}}" class="pb-1 d-block">Offres</a></li>
-                            <li><a href="{{ path('front_entreprise_tousevenements')}}" class="pb-1 d-block">Evenements</a></li>
-                            <li><a href="{{ path('front_test_taker_abonnement')}}" class="pb-1 d-block">Abonnements</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Entreprise</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ path('front_entreprise_profil')}}" class="pb-1 d-block">Mon profil</a></li>
-                            <li><a href="{{ path('front_entreprise_mesoffres')}}" class="pb-1 d-block">Mes offres</a></li>
-                            <li><a href="{{ path('front_entreprise_creroffre')}}" class="pb-1 d-block">Ajouter offre</a></li>
-                            <li><a href="{{ path('front_entreprise_candidature')}}" class="pb-1 d-block">Liste des candidatures</a></li>
-                            <li><a href="{{ path('front_entreprise_mesevenements')}}" class="pb-1 d-block">Evenements</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Test Maker</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ path('front_entreprise_profil')}}" class="pb-1 d-block">Mon Profil</a></li>
-                            <li><a href="{{ path('front_testmaker_candidature_accp')}}" class="pb-1 d-block">Candidatures</a></li>
-                            <li><a href="{{ path('front_testmaker_mestests')}}" class="pb-1 d-block">Tests à faire</a></li>
-                            <li><a href="{{ path('front_testmaker_bibliotheque')}}" class="pb-1 d-block">Bibliothèque</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">RETROUVEZ-NOUS</h2>
-                        <div class="block-23 mb-3">
-                            <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">13 bloc K,Esprit Prepa, ghazela, Tunis, Tunisia </span></li>
-                                <li><a href=path{{'#'}}><span class="icon icon-phone"></span><span class="text">+216 23 641 983</span></a></li>
-                                <li><a href=path{{'#'}}><span class="icon icon-envelope"></span><span class="text">TestandHire@gmail.com</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-
-                    <p>CopyRight2022</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 {% endblock %}
 
 

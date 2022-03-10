@@ -1,0 +1,123 @@
+{% extends 'frontindex/index.html.twig' %}
+{% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('front/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/ionicons.min.css' )}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{asset('front/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css') }}">
+{% endblock %}
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <section class="dashboard-counts section-padding">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3 class="breadcrumb">
+                                    <i class="fa fa-plus-square"></i>  Postuler Maintenant !
+                                </h3>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        {{ form_start(form2, {'method': 'post','attr': {'class': 'contact'}}) }}
+                                        <div class="form-group">
+                                            <label>Message: </label>
+                                            {{ form_widget(form2.message, {'attr': {'class':'form-control ', 'placeholder': 'Ecrivez votre Message De Motivation!','required' : 'true'}}) }}
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Offre : </label>
+                                            {{ form_widget(form2.Offre) }}
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Captcha : </label>
+                                            {{ form_widget(form2.captcha ) }}
+
+                                        </div>
+
+
+
+
+
+
+                                        {{ form_end(form2) }}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <br/>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -47,4 +47,13 @@ class CandidatureRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findOnlyaccepted() {
+        return $this->createQueryBuilder('c')
+            ->where('c.etat_candidature like :accepte')
+            ->setParameter('accepte','accepte')
+
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class abonnementController extends AbstractController
 {
     /**
-     * @Route("/front/test/taker/abonnement", name="front_test_taker_abonnement")
+     * @Route("/front/testtaker/abonnement", name="front_test_taker_abonnement")
      */
     public function index(): Response
     {
-        return $this->render('front/test_taker/abonnement/index.html.twig', [
+        return $this->render('/front/test_taker/abonnement/abonnement.html.twig', [
             'controller_name' => 'abonnementController',
         ]);
     }

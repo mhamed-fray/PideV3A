@@ -1,0 +1,59 @@
+{% extends 'frontindex/index.html.twig' %}
+{% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('front/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/ionicons.min.css' )}}">
+
+    <link rel="stylesheet" href="{{asset('front/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{asset('front/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css') }}">
+{% endblock %}
+
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+{% block body %}
+    <div class="container mt-4">
+        <h2> Editer votre candidature </h2>
+        {{ form_start(form3) }}
+        {{ form_rest(form3) }}
+
+
+        {{ form_end(form3) }}
+
+    </div>
+{% endblock %}
