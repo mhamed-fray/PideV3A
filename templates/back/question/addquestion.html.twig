@@ -19,7 +19,14 @@ Add Question
             <div class="container mt-4">
                 <h2> Ajouter question </h2>
                 {{ form_start(form) }}
-                {{ form_rest(form) }}
+                
+
+                    {{ form_label(form.contenu, {'label_attr' : {'class': 'form-style-label'}}) }}
+                    {{ form_errors(form.contenu, {'attr' : {'class': 'form-style-textfield'}}) }}
+                    {{ form_widget(form.contenu) }}
+                    {{ form_help(form.contenu) }}
+
+                    
 
 
                 {{ form_end(form) }}

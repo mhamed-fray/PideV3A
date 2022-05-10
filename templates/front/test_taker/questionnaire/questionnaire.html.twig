@@ -1,3 +1,5 @@
+
+
 {% extends 'frontindex/index.html.twig' %}
 
 
@@ -30,15 +32,9 @@
 
 
 
-
-
-
-
-
 {% block body %}
-<button>
-    <a href="{{ path('add_question') }}" class="btn btn-primary py-2">ajouter</a>
-</button>
+{% set note = 1 %}
+
 <section class="ftco-section bg-light">
 
 	<div class="container">
@@ -70,16 +66,11 @@
 							    <div class="in-question-container">
                                 
                                     <div style="padding: 40px">
-							            {% for question in allquestions %}
-                                            <div class="questions_questionnaire">
-                                                {{question.contenu}}
-                                            </div>
-                                            {% for listchoix in question.choix %}
-                                            <div classe="choix_questionnaire">
-                                                {{listchoix.contenu}}
-                                            </div>
-                                            {% endfor %}
-                                        {% endfor %}
+                                    
+							            {{ form_start(form) }}
+                                            {{ form_rest(form) }}
+                                        {{ form_end(form) }}
+
 							        </div>
 
                                 </div>
@@ -90,26 +81,43 @@
                         
                     
                 </div>    
-                <div class="row mt-5">
-		          	<div class="col text-center">
-		            	<div class="block-27">
-		            		<ul>
-		        				<li><a href="#">&lt;</a></li>
-		            			<li class="active"><span>1</span></li>
-	                			<li><a href="#">2</a></li>
-	                			<li><a href="#">3</a></li>
-		        				<li><a href="#">4</a></li>
-		        				<li><a href="#">5</a></li>
-                				<li><a href="#">&gt;</a></li>
-             				</ul>
-            			</div>
-          			</div>
-        		</div>
+                
 	   		</div>
 		</div>
 	</div>
 </section>
+
+
+{#
+<script>
+var note = 0;
+function doalert(checkboxElem) {
+    if (checkboxElem.checked) {
+         note = note + 1;
+        alert(note)
+    }
+}
+</script>
+#}
+
+<script>
+var note = 0;
+console.log("ranjiiit " + note+1);
+
+</script>
+
+
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
 
 
 

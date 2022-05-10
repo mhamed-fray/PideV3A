@@ -1,0 +1,78 @@
+{% extends 'frontindex/index.html.twig' %}
+
+{% block r1 %}
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-start">
+                <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+                    <p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+                    <h1 class="mb-3 bread">Browse Jobs</h1>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <div class="container mt-4">
+        <h2 class=" text-success" >  Test </h2>
+        {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.datedebut,"Date debut") }}</div>
+
+            {{ form_widget(form.datedebut) }}
+
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.datedebut) }}
+            </div>
+
+
+
+
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.datefin,"   Date de fin        ") }}</div>
+
+            {{ form_widget(form.datefin) }}
+
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.datefin) }}
+            </div>
+            <br></br>
+        </div>
+
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.titre,"Titre") }}</div>
+            <div class="form-group">
+                {{ form_widget(form.titre,{attr: {'class': 'form-control'}}) }}
+            </div>
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.titre) }}
+            </div>
+        </div>
+        <div>
+            <div class="badge border-primary border-1 text-primary" >
+                {{ form_label(form.Sujet.Sujet,"Sujet") }}</div>
+            <div class="form-group">
+                {{ form_widget(form.Sujet.Sujet,{attr: {'class': 'form-control'}}) }}
+            </div>
+            <div class="badge border-danger border-1 text-danger" >
+                {{ form_errors(form.Sujet.Sujet) }}
+            </div></div>
+
+
+
+
+
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}

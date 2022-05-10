@@ -1,0 +1,45 @@
+
+
+<div class="pdf_container" style="margin: 52px 60px 0px 60px;">
+    <div class="titre_container" style="border-bottom: 6px solid black;padding-bottom: 19px;">
+        <table style=" margin: 0 auto 0 auto; ">
+            <tr style="text-align: center;">
+                <td style="font-size: 47px;padding-right: 54px;"><div class="titre_pdf"> Questionnaire </div></td>
+                <td style="border-left: 2px solid;font-size: 20px;"><div class="titre_test_pdf"> Test: {{test_selected.titre }} </div>
+                    <div class="titre_sujet_pdf"> Sujet: {{test_selected.sujet.sujet }} </div></td>
+            </tr>
+            <th>
+                
+            </th>
+        </table>
+    </div>
+    <div style="border-bottom: 6px solid black;">
+    <div style="margin: 107px 0 83px 54px;">
+    {% set count = 0 %}
+        {% for questions in test_selected.questions %}
+        {% set count = count + 1 %}
+            <div >
+                <div style="font-size: 23px;">{{count}} - {{ questions.contenu }}</div>
+                <div class="choices_container" style="margin: 10px 0 31px 30px;">
+                <div style="padding: 9px 0;"> {{questions.choix[0].contenu}} <input type="checkbox" name="checkfield" id="g01-01" style="margin-left: 32px;" /></div>
+                <div style="padding: 9px 0;"> {{questions.choix[1].contenu}}<input type="checkbox" name="checkfield" id="g01-01" style="margin-left: 32px;"/></div>
+                <div style="padding: 9px 0;"> {{questions.choix[2].contenu}}<input type="checkbox" name="checkfield" id="g01-01" style="margin-left: 32px;"/></div>
+                
+            </div>            
+        {% endfor %}
+
+
+    </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+						

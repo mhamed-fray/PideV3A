@@ -55,7 +55,7 @@ class questionController extends AbstractController
         $Question=$repository->find($id);
 
         $form=$this->createForm(QuestionType::class, $Question);
-        $form->add('update',SubmitType::class);
+        
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid() )
         {
@@ -81,6 +81,28 @@ class questionController extends AbstractController
         $em->flush();
         return $this->redirectToRoute("back_all_questions");
 
+    }
+
+
+    /**
+     * @param QuestionRepository $repository
+     * @Route("/search/", name="serie-search")
+     */
+    public function searchSeries(QuestionRepository $questionrepository, Request $request)
+    {
+        $questions = $questionrepository->findByNamePopular(
+            $request->query->get('query')
+        );
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $categoryRepository=$entityManager->getRepository(Test::class);
+        $categories=$categoryRepository->findAll();
+
+        return $this->render('back\questions.html.twig', [
+            'controller_name' => 'testController',
+            'allquestions'=>$questions,
+
+        ]);
     }
 
 
