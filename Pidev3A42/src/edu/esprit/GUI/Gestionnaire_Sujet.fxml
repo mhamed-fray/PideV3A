@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.GUI.Gestionnaire_SujetController">
+   <children>
+      <TableView fx:id="tables" layoutX="341.0" layoutY="79.0" onMouseClicked="#selectedl" prefHeight="243.0" prefWidth="149.0">
+        <columns>
+          <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+          <TableColumn fx:id="sujet_col" prefWidth="150.0" text="sujet" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btn_ajouter1" layoutX="210.0" layoutY="138.0" onAction="#Ajouter_Sujet" text="ajouter">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_supprimer1" layoutX="198.0" layoutY="186.0" onAction="#Supprimer_Sujet" text="supprimer">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_modifer1" layoutX="210.0" layoutY="240.0" onAction="#Modifier_Sujet" text="modifer">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txt_rech" layoutX="340.0" layoutY="31.0" promptText="search" />
+      <JFXTextField fx:id="txt_sujet" layoutX="42.0" layoutY="125.0" promptText="sujet" />
+   </children>
+</AnchorPane>
