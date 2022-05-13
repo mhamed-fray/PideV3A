@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="450.0" styleClass="btn" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tableView.addOffreController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="384.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Offre">
+               <font>
+                  <Font name="Bauhaus 93" size="32.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="titre" wrappingWidth="102.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="titrefld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="64.0">
+         <VBox.margin>
+            <Insets top="17.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="18.0" layoutY="113.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="secteur" wrappingWidth="102.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <JFXTextField fx:id="secteurfld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="114.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="description" wrappingWidth="122.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <JFXTextField fx:id="descriptionfld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <VBox.margin>
+            <Insets top="17.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="52.0" prefWidth="355.0" />
+      <HBox alignment="CENTER" layoutX="18.0" layoutY="230.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="localisation" wrappingWidth="124.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+            </Text>
+            <JFXTextField fx:id="localisationfld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="18.0" layoutY="274.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="salaire" wrappingWidth="102.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="salairefld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="355.0">
+         <VBox.margin>
+            <Insets top="110.0" />
+         </VBox.margin>
+         <children>
+            <JFXButton onMouseClicked="#save" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #00E676;" styleClass="btn" text="Save">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="132.0" layoutY="19.0" onMouseClicked="#clean" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" styleClass="btn" text="Clean">
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXTextField fx:id="emailFld1" prefHeight="25.0" prefWidth="358.0">
+         <font>
+            <Font name="Century Gothic" size="20.0" />
+         </font>
+      </JFXTextField>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</VBox>

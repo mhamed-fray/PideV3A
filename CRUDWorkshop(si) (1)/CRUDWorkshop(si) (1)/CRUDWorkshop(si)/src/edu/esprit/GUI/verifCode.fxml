@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.VerifCodeController">
+   <children>
+      <TextField fx:id="CodeTxt" layoutX="119.0" layoutY="189.0" promptText="* * * * * *" style="-fx-background-color: transparent; -fx-border-color: #A0B5E5; -fx-border-width: 0px 0px 2px 0px;" />
+      <ImageView fitHeight="415.0" fitWidth="200.0" layoutX="433.0" opacity="0.55" pickOnBounds="false" preserveRatio="false">
+         <image>
+            <Image url="@4zevar160300097.jpg" />
+         </image>
+         <effect>
+            <DropShadow spread="0.07" />
+         </effect>
+      </ImageView>
+      <Text fill="WHITE" layoutX="445.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-weight: bold;" text="Nouveau ici?" wrappingWidth="175.99998807907104" />
+      <Text fill="WHITE" layoutX="449.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Inscrivez-vous et découvrez une grande quantité de nouvelles opportunités!" textAlignment="CENTER" wrappingWidth="168.13671875" />
+      <Button fx:id="btnGoToRegister" layoutX="503.0" layoutY="235.0" mnemonicParsing="false" onAction="#gotoregister" style="-fx-background-color: #dad1d1;" text="Register" textFill="#362f2f" />
+      <Text layoutX="112.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px;" text="Bienvenue sur Test&amp;Hire" />
+      <ImageView fitHeight="139.0" fitWidth="149.0" layoutX="124.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Modern_Elegant_Circle_Initials_Logo__2_-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="179.0" layoutY="172.0" style="-fx-background-color: transparent;" text="Code" textFill="#5e5b5b" />
+      <FontAwesomeIconView glyphName="KEY" layoutX="257.0" layoutY="207.0" text="" />
+      <Button fx:id="Savecode" layoutX="168.0" layoutY="260.0" mnemonicParsing="false" onAction="#sendCode" text="Send code ." />
+   </children>
+</AnchorPane>

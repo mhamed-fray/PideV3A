@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="823.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="tableView.CondidaturesController">
+   <children>
+      <HBox layoutY="-1.0" prefHeight="268.0" prefWidth="194.0">
+         <children>
+            <TableView prefHeight="232.0" prefWidth="194.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="id" />
+                <TableColumn prefWidth="75.0" text="nom" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <Pane layoutX="255.0" layoutY="14.0" prefHeight="233.0" prefWidth="200.0">
+         <children>
+            <HBox prefHeight="41.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="id" />
+                  <JFXTextField />
+               </children>
+            </HBox>
+            <HBox layoutY="41.0" prefHeight="41.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="nom" />
+                  <JFXTextField />
+               </children>
+            </HBox>
+            <HBox layoutY="69.0" prefHeight="41.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="email" />
+                  <JFXTextField />
+               </children>
+            </HBox>
+            <HBox layoutY="103.0" prefHeight="41.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="letrre" />
+                  <JFXTextField />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

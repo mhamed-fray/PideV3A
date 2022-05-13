@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.ReservationController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="436.0" prefWidth="822.0" style="-fx-background-color: #F4F6F6#F4F6F6;" styleClass="mainFxmlClass">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="822.0" spacing="20.0" style="-fx-background-color: #FDFEFE;">
+               <children>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="86.0" text="Events" textFill="#f8b400">
+                     <font>
+                        <Font name="Edwardian Script ITC" size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="59.0" prefWidth="565.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="342.0" layoutY="14.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="290.0" spacing="5.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/icon_search.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="54.0" fitWidth="125.0" layoutX="198.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/loggo.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutX="9.0" layoutY="2.0" maxHeight="-Infinity" orientation="VERTICAL" prefHeight="59.0" prefWidth="23.0" />
+                     </children>
+                  </Pane>
+                  <HBox prefHeight="30.0" prefWidth="120.0" />
+               </children>
+            </HBox>
+            <VBox layoutY="59.0" prefHeight="381.0" prefWidth="126.0" style="-fx-background-color: #FDFEFE;">
+               <children>
+                  <VBox prefHeight="157.0" prefWidth="126.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="browse" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="99.0">
+                           <padding>
+                              <Insets bottom="3.0" left="10.0" right="3.0" />
+                           </padding>
+                        </Separator>
+                        <HBox prefHeight="35.0" prefWidth="126.0" spacing="5.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clock.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="56.0" text="latest" textFill="#1e1d1d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="126.0" spacing="4.0" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/fire.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="trending" textFill="#1e1d1d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="selected" />
+                              <String fx:value="mouse-moved" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="224.0" prefWidth="126.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="private" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </Label>
+                        <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="99.0">
+                           <padding>
+                              <Insets bottom="3.0" left="10.0" right="3.0" />
+                           </padding>
+                        </Separator>
+                        <HBox prefHeight="35.0" prefWidth="126.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="47.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/ticket.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="my reserv" textFill="#1e1d1d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Label contentDisplay="TOP" layoutX="126.0" layoutY="59.0" prefHeight="35.0" prefWidth="250.0" text="Reservation" textFill="#1e1d1d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="100.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <HBox layoutX="218.0" layoutY="126.0" prefHeight="237.0" prefWidth="457.0" styleClass="transparent" stylesheets="@../css/style.css">
+               <children>
+                  <Label prefHeight="59.0" prefWidth="262.0" text="nombre de place">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator layoutX="182.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="3.0" prefWidth="200.0" />
+            <HBox layoutX="289.0" layoutY="170.0" prefHeight="256.0" prefWidth="333.0">
+               <children>
+                  <TextField fx:id="nbp" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="425.0" layoutY="233.0" prefHeight="293.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#res" text="reserver" />
+               </children>
+            </HBox>
+            <ImageView fx:id="qr" fitHeight="167.0" fitWidth="200.0" layoutX="584.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.GUI.AbonnementStatController">
+   <children>
+      <BarChart fx:id="stat" layoutX="58.0" title="Statistiques des abonnements ">
+        <xAxis>
+          <CategoryAxis fx:id="tyabo" label="Type d'abonnement" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="nbrabo" label="Nombre des abonnements" side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

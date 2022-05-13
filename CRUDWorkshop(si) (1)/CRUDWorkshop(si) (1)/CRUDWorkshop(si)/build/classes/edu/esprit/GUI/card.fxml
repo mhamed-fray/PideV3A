@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selectone" prefHeight="185.0" prefWidth="400.0" styleClass="mouse-moved" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.CardController">
+   <children>
+      <ImageView fitHeight="123.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@event.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="185.0" prefWidth="224.0" styleClass="transparent" stylesheets="@../css/style.css">
+         <children>
+            <VBox prefHeight="109.0" prefWidth="224.0" styleClass="transparent" stylesheets="@../css/style.css">
+               <children>
+                  <VBox prefHeight="44.0" prefWidth="224.0" styleClass="transparent" stylesheets="@../css/style.css">
+                     <children>
+                        <HBox prefHeight="39.0" prefWidth="224.0" stylesheets="@../css/style.css">
+                           <children>
+                              <Label fx:id="titre" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="41.0" prefWidth="138.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="49.0" prefWidth="224.0" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/baby_calendar_32px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="desc" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="41.0" prefWidth="138.0" text="Label">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="51.0" prefWidth="224.0" stylesheets="@../css/style.css">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/location.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="loc" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="41.0" prefWidth="138.0" text="Label" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

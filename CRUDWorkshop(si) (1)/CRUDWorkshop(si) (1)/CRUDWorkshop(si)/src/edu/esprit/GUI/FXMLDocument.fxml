@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <TextField fx:id="ev_nom" layoutX="35.0" layoutY="143.0" promptText="Event title">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </TextField>
+      <TextField fx:id="ev_loc" layoutX="35.0" layoutY="355.0" promptText="Event location">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </TextField>
+      <DatePicker fx:id="ev_dat" layoutX="33.0" layoutY="200.0" prefHeight="31.0" prefWidth="187.0" promptText="Event date">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a85cf9" />
+               </light>
+            </Lighting>
+         </effect>
+      </DatePicker>
+      <Button fx:id="btnAjouter" layoutX="90.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #00061a;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="ev_desc" layoutX="35.0" layoutY="257.0" prefHeight="73.0" prefWidth="187.0" promptText="write your description">
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant color="#a85cf9" />
+               </light>
+            </Lighting>
+         </effect>
+      </TextArea>
+      <Label layoutX="26.0" layoutY="117.0" text="titre">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="174.0" text="date">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="231.0" text="description">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="330.0" text="localisation">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="63.0" text="Ajouter un evenement" textFill="#1e1d1d">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="524.0" layoutY="63.0" text="liste des evenements" textFill="#1e1d1d">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvevent" layoutX="249.0" layoutY="130.0" prefHeight="240.0" prefWidth="551.0">
+        <columns>
+          <TableColumn fx:id="coltitre" prefWidth="88.0" style="-fx-background-color: #00061a;" text="Titre" />
+            <TableColumn fx:id="coldesc" minWidth="0.0" prefWidth="106.0" style="-fx-background-color: #00061a;" text="Description" />
+            <TableColumn fx:id="colloc" prefWidth="88.0" style="-fx-background-color: #00061a;" text="localisation" />
+            <TableColumn fx:id="colloc1" prefWidth="75.0" style="-fx-background-color: #00061a;" text="participants" />
+            <TableColumn fx:id="coldat" prefWidth="136.0" style="-fx-background-color: #00061a;" text="date" />
+            <TableColumn fx:id="colid" prefWidth="57.0" style="-fx-background-color: #00061a;" text="id" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </TableView>
+      <Button fx:id="btnupdate" graphicTextGap="0.0" layoutX="646.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #00061a;" text="Update">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btndelete" layoutX="732.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="72.0" style="-fx-background-color: #00061a;" text="Delete">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="116.0" fitWidth="163.0" layoutX="330.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/loggo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="ev_id" layoutX="441.0" layoutY="381.0" promptText="Event to access">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </TextField>
+    </children>
+</AnchorPane>

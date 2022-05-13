@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="647.0" prefWidth="1256.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tableView.TablecandController">
+    <stylesheets>
+        <URL value="@tableview.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="canditable" layoutX="14.0" layoutY="167.0" prefHeight="265.0" prefWidth="796.0">
+        <columns>
+          <TableColumn fx:id="idcoll" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center;" text="id" />
+          <TableColumn fx:id="nomcol" maxWidth="100.0" prefWidth="89.0" style="-fx-alignment: center;" text="nom" />
+            <TableColumn fx:id="prenomcol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="prenom" />
+            <TableColumn fx:id="emailcol" maxWidth="165.0" prefWidth="124.0" style="-fx-alignment: center;" text="email" />
+            <TableColumn fx:id="messagecol" maxWidth="290.0" prefWidth="138.0" style="-fx-alignment: center;" text="message" />
+            <TableColumn fx:id="numcol" maxWidth="274.0" prefWidth="164.0" style="-fx-alignment: center;" text="Numero" />
+            <TableColumn fx:id="actioncol" maxWidth="274.0" prefWidth="110.0" style="-fx-alignment: center;" text="action" />
+        </columns>
+      </TableView>
+      <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Text layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CandidaturesDetails" wrappingWidth="309.13671875">
+         <font>
+            <Font name="Bauhaus 93" size="32.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" layoutX="602.0" layoutY="-1.0" prefHeight="36.0" prefWidth="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView glyphName="CLOSE" onMouseClicked="#close" size="20" styleClass="btn" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="34.0" layoutY="73.0" prefHeight="76.0" prefWidth="200.0">
+         <children>
+            <FontAwesomeIconView fill="#00e676" glyphName="REFRESH" layoutX="10.0" layoutY="65.0" onMouseClicked="#refreshTable" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </HBox>
+      <VBox layoutX="894.0" layoutY="83.0" prefHeight="551.0" prefWidth="348.0" style="-fx-background-color: #f5f5dc;">
+         <children>
+            <HBox prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#ee650f" strokeType="OUTSIDE" strokeWidth="0.0" text="candidatures Details">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#f21616" strokeType="OUTSIDE" strokeWidth="0.0" text="nom  :" />
+                  <JFXTextField fx:id="nomflld" prefHeight="31.0" prefWidth="305.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="67.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#d70d0d" strokeType="OUTSIDE" strokeWidth="0.0" text="prenom  :" />
+                  <JFXTextField fx:id="prenomflld" prefHeight="31.0" prefWidth="283.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="124.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#e81f1f" strokeType="OUTSIDE" strokeWidth="0.0" text="email  :" />
+                  <JFXTextField fx:id="emailflld" prefHeight="31.0" prefWidth="299.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="181.0" prefHeight="109.0" prefWidth="348.0">
+               <children>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Message">
+                     <HBox.margin>
+                        <Insets top="50.0" />
+                     </HBox.margin>
+                  </Text>
+                 
+                  <JFXTextArea fx:id="messageflld" prefHeight="95.0" prefWidth="290.0">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin></JFXTextArea>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#f24949" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero Telephone :">
+                     <HBox.margin>
+                        <Insets top="60.0" />
+                     </HBox.margin>
+                  </Text>
+                  <JFXTextField fx:id="numfllld" prefHeight="66.0" prefWidth="191.0">
+                     <HBox.margin>
+                        <Insets left="20.0" top="30.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="66.0" prefWidth="348.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#send" style="-fx-background-color: #7fff00;" text="accepter" textFill="#eff5f1">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: #dc143c;" text="refuser" textFill="#eaf2ec">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="80.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

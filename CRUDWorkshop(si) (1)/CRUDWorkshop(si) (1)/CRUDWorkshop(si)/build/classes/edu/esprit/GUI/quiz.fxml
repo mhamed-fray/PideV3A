@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.QuizController">
+   <children>
+      <Pane fx:id="mypane" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="377.0" layoutX="31.0" layoutY="38.0" stroke="#d0d0d0" strokeType="INSIDE" width="745.0" />
+            <CheckBox fx:id="checkbox_choix3" layoutX="108.0" layoutY="350.0" mnemonicParsing="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <Line endX="72.5" endY="180.5" layoutX="-28.0" layoutY="-30.0" startX="791.0" startY="180.5" stroke="#d0d0d0" />
+            <Line endX="55.0" endY="124.5" layoutX="-24.0" layoutY="-31.0" startX="800.0" startY="124.5" stroke="#d0d0d0" />
+            <CheckBox fx:id="checkbox_choix2" layoutX="107.0" layoutY="286.0" mnemonicParsing="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkbox_choix1" layoutX="108.0" layoutY="220.0" mnemonicParsing="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <Label fx:id="text_question" alignment="CENTER" layoutX="201.0" layoutY="102.0" prefHeight="43.0" prefWidth="444.0" text="Label">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="text_choix3" layoutX="152.0" layoutY="338.0" prefHeight="43.0" prefWidth="386.0" text="Label">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="text_choix2" layoutX="153.0" layoutY="274.0" prefHeight="43.0" prefWidth="386.0" text="Label">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="text_choix1" layoutX="153.0" layoutY="208.0" prefHeight="43.0" prefWidth="386.0" text="Label">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="text_test" alignment="CENTER" layoutX="218.0" layoutY="47.0" prefHeight="43.0" prefWidth="414.0" text="Label" textFill="#006e7c">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="52.0" layoutY="47.0" prefHeight="43.0" prefWidth="112.0" text="Le titre du test :" />
+            <Label layoutX="52.0" layoutY="102.0" prefHeight="43.0" prefWidth="63.0" text="Enoncé :" />
+            <Hyperlink fx:id="next_text" layoutX="449.0" layoutY="512.0" onAction="#nextquestion" text="Next question &gt;&gt;" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

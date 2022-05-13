@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.GestionUserController">
+   <children>
+      <TableView fx:id="tableUser" layoutX="251.0" layoutY="14.0" onMouseClicked="#selectedl" prefHeight="200.0" prefWidth="335.0">
+        <columns>
+          <TableColumn fx:id="email" prefWidth="75.0" text="email" />
+        
+            <TableColumn fx:id="etat" prefWidth="70.0" text="etat" />
+       <TableColumn fx:id="roles" prefWidth="70.0" text="roles" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtEmail" layoutX="85.0" layoutY="56.0" />
+      
+
+      <Button fx:id="btnAjout" layoutX="56.0" layoutY="233.0" mnemonicParsing="false" onAction="#ajouterloc" text="Ajouter" />
+      <Button fx:id="btnSupp" layoutX="166.0" layoutY="288.0" mnemonicParsing="false" onAction="#supprimerloc" text="Supprimer" />
+      <Button fx:id="btnRetour" layoutX="518.0" layoutY="338.0" mnemonicParsing="false" text="Retour" />
+      <Button fx:id="btnModif" layoutX="310.0" layoutY="288.0" mnemonicParsing="false" onAction="#modifierabonnement" text="Modifier" />
+      <ComboBox fx:id="ComboxRole" layoutX="84.0" layoutY="138.0" prefWidth="150.0" />
+         <ComboBox fx:id="ComboxEtat" layoutX="84.0" layoutY="172.0" prefWidth="150.0" />
+      <Label fx:id="role" layoutX="14.0" layoutY="142.0" text="Role" />
+      <Label layoutX="12.0" layoutY="51.0" text="Email" />
+      <Label layoutX="12.0" layoutY="106.0" text="Password" />
+      <Label layoutX="12.0" layoutY="167.0" text="Etat" />
+      <PasswordField fx:id="txtPassword" layoutX="85.0" layoutY="102.0" />
+      <TextField fx:id="filterField" layoutX="71.0" layoutY="26.0" />
+      <ImageView fx:id="imageview" fitHeight="87.0" fitWidth="97.0" layoutX="118.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true" />
+      <FontAwesomeIconView layoutX="199.0" layoutY="250.0" onMouseClicked="#supprimerloc" />
+   </children>
+</AnchorPane>

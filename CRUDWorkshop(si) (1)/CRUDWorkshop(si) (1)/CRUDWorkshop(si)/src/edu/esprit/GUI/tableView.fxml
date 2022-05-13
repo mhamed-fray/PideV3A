@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="1044.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tableView.TableViewController">
+    <stylesheets>
+        <URL value="@tableview.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="Offrestable" layoutX="7.0" layoutY="177.0" prefHeight="265.0" prefWidth="683.0" style="-fx-background-color: #00ced1;">
+        <columns>
+          <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center;" text="id" />
+          <TableColumn fx:id="titrecol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="titre" />
+            <TableColumn fx:id="secteurcol" maxWidth="85.0" prefWidth="85.0" style="-fx-alignment: center;" text="secteur" />
+            <TableColumn fx:id="descriptioncol" maxWidth="165.0" prefWidth="153.0" style="-fx-alignment: center;" text="description" />
+            <TableColumn fx:id="localisationcol" maxWidth="183.0" prefWidth="119.0" style="-fx-alignment: center;" text="localisation" />
+            <TableColumn fx:id="salairecol" maxWidth="105.0" prefWidth="73.0" style="-fx-alignment: center;" text="salaire" />
+            <TableColumn fx:id="actioncol" maxWidth="123.0" prefWidth="82.0" style="-fx-alignment: center;" text="action" />
+        </columns>
+      </TableView>
+      <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Text fill="#1e19e5" layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Offres Details" wrappingWidth="245.13671875">
+         <font>
+            <Font name="Bauhaus 93" size="32.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" layoutX="602.0" layoutY="-1.0" prefHeight="36.0" prefWidth="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView glyphName="CLOSE" onMouseClicked="#close" size="20" styleClass="btn" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="34.0" layoutY="73.0" prefHeight="76.0" prefWidth="200.0">
+         <children>
+            <FontAwesomeIconView fill="#2196f3" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#00e676" glyphName="REFRESH" layoutX="10.0" layoutY="65.0" onMouseClicked="#refreshTable" size="45" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="62.0" layoutY="65.0" onMouseClicked="#print" size="45" styleClass="btn" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="484.0" layoutY="100.0" />
+      <HBox alignment="CENTER" layoutX="492.0" layoutY="149.0" />
+      <HBox alignment="CENTER" layoutX="484.0" layoutY="150.0" />
+      <HBox alignment="CENTER" layoutX="492.0" layoutY="266.0" />
+      <VBox layoutX="711.0" layoutY="102.0" prefHeight="433.0" prefWidth="255.0" style="-fx-background-color: #f5f5dc;">
+         <children>
+            <HBox prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#ee650f" strokeType="OUTSIDE" strokeWidth="0.0" text="modifier offre">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#f21616" strokeType="OUTSIDE" strokeWidth="0.0" text="titre  :" />
+                  <JFXTextField fx:id="titreflld" prefHeight="31.0" prefWidth="176.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="67.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#d70d0d" strokeType="OUTSIDE" strokeWidth="0.0" text="secteur  :" />
+                  <JFXTextField fx:id="secteurflld" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="124.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#e81f1f" strokeType="OUTSIDE" strokeWidth="0.0" text="description  :" />
+                  <JFXTextField fx:id="descriptionflld" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="181.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#e10f0f" strokeType="OUTSIDE" strokeWidth="0.0" text="localisation  :" />
+                  <JFXTextField fx:id="localisationflld" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="238.0" prefHeight="57.0" prefWidth="255.0">
+               <children>
+                  <Text fill="#d31717" strokeType="OUTSIDE" strokeWidth="0.0" text="salaire  :" />
+                  <JFXTextField fx:id="salaireflld" />
+               </children>
+            </HBox>
+            <HBox prefHeight="55.0" prefWidth="187.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#updatee" style="-fx-background-color: #7fff00;" text="modifier" textFill="#298a41">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TextField layoutX="209.0" layoutY="95.0" prefHeight="30.0" prefWidth="140.0" promptText="Search..." style="-fx-background-color: #97EBF5; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="321.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../CV/Pidev-integration_lions/src/main/resources/com/example/stockfx/icons8_Search_52px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

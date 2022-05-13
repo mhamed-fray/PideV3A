@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.GUI.ReservationController">
+   <children>
+      <TableView layoutX="147.0" layoutY="51.0" prefHeight="244.0" prefWidth="310.0">
+        <columns>
+          <TableColumn fx:id="ideve" prefWidth="158.0" text="evenement numero" />
+          <TableColumn fx:id="npl" prefWidth="151.0" text="nombre de place" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
