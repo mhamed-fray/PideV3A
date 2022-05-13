@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="436.0" prefWidth="822.0" style="-fx-background-color: #F4F6F6#F4F6F6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.FXMLAffichageController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="822.0" spacing="20.0" style="-fx-background-color: #FDFEFE;">
+         <children>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="86.0" text="Events" textFill="#f8b400">
+               <font>
+                  <Font name="Edwardian Script ITC" size="36.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="59.0" prefWidth="565.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" layoutX="342.0" layoutY="14.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="290.0" spacing="5.0">
+                     <children>
+                       
+                        <ImageView fitHeight="30.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_search.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="54.0" fitWidth="125.0" layoutX="198.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/loggo.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="9.0" layoutY="2.0" maxHeight="-Infinity" orientation="VERTICAL" prefHeight="59.0" prefWidth="23.0" />
+               </children>
+            </Pane>
+            <HBox prefHeight="30.0" prefWidth="120.0" />
+         </children>
+      </HBox>
+      <VBox layoutY="59.0" prefHeight="381.0" prefWidth="126.0" style="-fx-background-color: #FDFEFE;">
+         <children>
+            <VBox prefHeight="157.0" prefWidth="126.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="browse" textFill="#1e1d1d">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="99.0">
+                     <padding>
+                        <Insets bottom="3.0" left="10.0" right="3.0" />
+                     </padding>
+                  </Separator>
+                  <HBox prefHeight="35.0" prefWidth="126.0" spacing="5.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/clock.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="56.0" text="latest" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="35.0" prefWidth="126.0" spacing="4.0" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/fire.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="trending" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="selected" />
+                        <String fx:value="mouse-moved" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="224.0" prefWidth="126.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="private" textFill="#1e1d1d">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </Label>
+                  <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="99.0">
+                     <padding>
+                        <Insets bottom="3.0" left="10.0" right="3.0" />
+                     </padding>
+                  </Separator>
+                  <HBox prefHeight="35.0" prefWidth="126.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/ticket.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="my reserv" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <Label contentDisplay="TOP" layoutX="126.0" layoutY="59.0" prefHeight="35.0" prefWidth="183.0" text="recently Added" textFill="#1e1d1d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <ScrollPane fx:id="scroll" layoutX="140.0" layoutY="91.0" prefHeight="192.0" prefWidth="676.0" styleClass="transparent" stylesheets="@../css/style.css">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <content>
+            <HBox fx:id="cardlayout" prefHeight="152.0" prefWidth="860.0">
+               <children>
+                  <GridPane fx:id="grid" prefHeight="122.0" prefWidth="750.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="385.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="383.0" minWidth="10.0" prefWidth="382.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

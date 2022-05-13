@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.AffichageEvController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="436.0" prefWidth="822.0" style="-fx-background-color: #F4F6F6#F4F6F6;" styleClass="mainFxmlClass">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="822.0" spacing="20.0" style="-fx-background-color: #FDFEFE;">
+               <children>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="86.0" text="Events" textFill="#f8b400">
+                     <font>
+                        <Font name="Edwardian Script ITC" size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="59.0" prefWidth="565.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="342.0" layoutY="14.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="290.0" spacing="5.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/icon_search.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="54.0" fitWidth="125.0" layoutX="258.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/loggo.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutX="9.0" layoutY="2.0" maxHeight="-Infinity" orientation="VERTICAL" prefHeight="59.0" prefWidth="23.0" />
+                     </children>
+                  </Pane>
+                  <HBox prefHeight="30.0" prefWidth="120.0" />
+               </children>
+            </HBox>
+            <VBox layoutY="59.0" prefHeight="381.0" prefWidth="126.0" style="-fx-background-color: #FDFEFE;">
+               <children>
+                  <VBox prefHeight="157.0" prefWidth="126.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="browse" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="99.0">
+                           <padding>
+                              <Insets bottom="3.0" left="10.0" right="3.0" />
+                           </padding>
+                        </Separator>
+                        <HBox prefHeight="35.0" prefWidth="126.0" spacing="5.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clock.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="56.0" text="latest" textFill="#1e1d1d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="126.0" spacing="4.0" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/fire.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="trending" textFill="#1e1d1d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="selected" />
+                              <String fx:value="mouse-moved" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="224.0" prefWidth="126.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="private" textFill="#1e1d1d">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </Label>
+                        <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="99.0">
+                           <padding>
+                              <Insets bottom="3.0" left="10.0" right="3.0" />
+                           </padding>
+                        </Separator>
+                        <HBox prefHeight="35.0" prefWidth="126.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="47.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/ticket.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="27.0" prefWidth="78.0" text="my reserv" textFill="#1e1d1d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox layoutX="138.0" layoutY="67.0" prefHeight="105.0" prefWidth="661.0" styleClass="transparent" stylesheets="@../css/style.css">
+               <children>
+                  <HBox maxHeight="-Infinity" prefHeight="100.0" prefWidth="662.0">
+                     <children>
+                        <ImageView fitHeight="102.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/7914_CSHeader_Events4.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="190.0" right="150.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox layoutX="136.0" layoutY="156.0" maxWidth="550.0" prefHeight="55.0" prefWidth="1281.0">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="39.0" />
+                  <Label prefHeight="78.0" prefWidth="162.0" text="Event" textFill="#f8b400">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tit" prefHeight="100.0" prefWidth="162.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="192.0" layoutY="210.0" maxWidth="550.0" prefHeight="55.0" prefWidth="399.0">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="39.0" />
+                  <Label prefHeight="55.0" prefWidth="84.0" text="About" textFill="#f8b400">
+                     <font>
+                        <Font name="Berlin Sans FB" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="desc" prefHeight="55.0" prefWidth="299.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="188.0" layoutY="262.0" maxWidth="550.0" prefHeight="55.0" prefWidth="386.0">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="39.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/location.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Pane>
+                  <Label fx:id="loca" prefHeight="55.0" prefWidth="354.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="188.0" layoutY="306.0" maxWidth="550.0" prefHeight="55.0" prefWidth="162.0">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="39.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/conference_foreground_selected_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Pane>
+                  <Label fx:id="nbp" prefHeight="55.0" prefWidth="138.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="136.0" layoutY="358.0" maxWidth="550.0" prefHeight="55.0" prefWidth="183.0">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="39.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/baby_calendar_32px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Pane>
+                  <Label fx:id="datt" prefHeight="55.0" prefWidth="153.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <Button layoutX="424.0" layoutY="370.0" mnemonicParsing="false" onMouseClicked="#goToRes" style="-fx-background-color: #f8b400;" styleClass="selected" stylesheets="@../css/style.css" text="reserver">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
